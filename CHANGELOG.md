@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.11.0] — 2026-09-19
+
+### Added — Session 11: Dashboard Overview & Polish
+
+#### UI Components
+- `Dashboard.tsx` — High-level command center mapping to the `/` route.
+- **Curriculum Stats**: Fetches and visualizes aggregated statistics from `/api/v1/curriculum/stats` (Phases, Skill Layers, Domains, Topics, Total Days).
+- **Today's Mission Status**: Fetches today's tasks and calculates a progress percentage with a dynamic neon progress bar. Previews the top 3 tasks directly on the dashboard.
+- **Empty States**: Elegant handling of unassigned tasks with prompt to generate them.
+- **Cyber Styling**: Final polish with `lucide-react` iconography, glassmorphism panels, greeting logic based on time of day, and aesthetic background watermarks.
+
+---
+
 ## [0.10.0] — 2026-09-19
 
 ### Added — Session 10: Daily Task UI

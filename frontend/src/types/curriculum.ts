@@ -41,3 +41,12 @@ export interface Phase {
   order: number;
   skill_layers?: SkillLayer[]; // Optional
 }
+
+export interface CurriculumStats {
+  total_phases: number;
+  total_skill_layers: number;
+  total_domains: number;
+  total_topics: number;
+  total_objectives: number;
+  total_days: number;
+}
