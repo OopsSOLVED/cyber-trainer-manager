@@ -6,6 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.5.0] — 2026-09-19
+
+### Added — Session 5: Task System
+
+#### Task Models
+- `Task` ORM model (Topic assigned to a User)
+- `Subtask` ORM model (LearningObjective assigned to a User)
+- `TaskStatus` Enum (`todo`, `in_progress`, `completed`, `blocked`, `skipped`)
+- Time tracking fields (`estimated_hours`, `actual_hours`)
+- Scheduling fields (`assigned_date`, `completed_at`)
+- Alembic migration for task tables
+
+#### Task Endpoints
+- `POST /api/v1/tasks/generate` — Generate tasks for a specific curriculum day
+- `GET /api/v1/tasks/today` — Get today's assigned tasks
+- `PATCH /api/v1/tasks/{task_id}` — Update task status/notes
+- `PATCH /api/v1/tasks/subtasks/{subtask_id}` — Update subtask status/notes
+
+#### Architecture
+- `models/task.py` — Task execution layer models
+- `repositories/task.py` — Logic for task generation and retrieval
+- `api/v1/tasks.py` — Task router (protected by authentication)
+- `schemas/task.py` — Pydantic schemas for tasks and subtasks
+
+#### Tests
+- 12 new task tests (models, schemas, and endpoints)
+- All 86 tests pass without requiring a live PostgreSQL instance
+
+---
+
 ## [0.4.0] — 2026-09-19
 
 ### Added — Session 4: Curriculum Model

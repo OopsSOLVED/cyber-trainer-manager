@@ -15,5 +15,4 @@ from app.models.curriculum import (  # noqa: F401
     LearningObjective,
 )
 
-# Import all models here as they are created in future sessions:
-# from app.models.task import Task, Subtask, TaskDependency, ...  # Session 5
+from app.models.task import Task, Subtask  # noqa: F401

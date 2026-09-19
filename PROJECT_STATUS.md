@@ -1,13 +1,24 @@
 # Project Status
 
-## Current Session: 4 — Curriculum Model ✅
+## Current Session: 5 — Task System ✅
 
 **Date**: 2026-09-19  
-**Version**: 0.4.0
+**Version**: 0.5.0
 
 ---
 
 ## Completed Work
+
+### Session 5 — Task System
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Task & Subtask models | ✅ Done | Links User to Topic/LearningObjective |
+| Task status enum | ✅ Done | todo, in_progress, completed, blocked, skipped |
+| Daily generation engine | ✅ Done | Generates tasks based on 196-day curriculum plan |
+| CRUD endpoints | ✅ Done | Generate, get today's tasks, update task/subtask |
+| Alembic migration | ✅ Done | Foreign keys and constraints |
+| Tests | ✅ Done | 12 tests for models, schemas, endpoints |
 
 ### Session 4 — Curriculum Model
 
@@ -69,21 +80,22 @@
 | GET | /api/v1/curriculum/domains/{id} | — | Domain with topics |
 | GET | /api/v1/curriculum/topics/{id} | — | Topic with objectives |
 | GET | /api/v1/curriculum/day/{day_number} | — | Topics for a specific day |
+| POST | /api/v1/tasks/generate | 🔒 | Generate tasks for a curriculum day |
+| GET | /api/v1/tasks/today | 🔒 | Get today's tasks |
+| PATCH | /api/v1/tasks/{id} | 🔒 | Update task status/notes |
+| PATCH | /api/v1/tasks/subtasks/{id} | 🔒 | Update subtask status/notes |
 
 ---
 
-## Next Session: Session 5 — Task System
+## Next Session: Session 6 — Database Seeding
 
 ### Objective
-- Task and Subtask ORM models linked to User and Curriculum (Topic)
-- Task status enum (todo, in_progress, completed, blocked, skipped)
-- Daily generation engine: Create user tasks based on their current day in the 196-day plan
-- CRUD endpoints for tasks and subtasks
-- Time tracking fields (estimated vs actual)
+- Python seeding script to populate the curriculum tables
+- Seed JSON files containing the actual cybersecurity roadmap data
+- Alembic `seeds` folder structure
 
 ### Acceptance Criteria
-- User can fetch their tasks for a specific day
-- User can update task status and add notes
-- Topics from the curriculum are properly instantiated as user-specific Tasks
-- Alembic migration for task tables
-- All tests pass
+- Seeder successfully inserts 4 Phases, 13 SkillLayers, Domains, Topics, and Objectives
+- Relationships are preserved correctly
+- Seed operation is idempotent (can run multiple times safely)
+- A command exists to run the seeders easily
