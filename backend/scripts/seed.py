@@ -14,7 +14,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.core.database import SessionLocal, init_db, close_db
+from app.core.database import async_session_factory, init_db, close_db
 from app.db.seeder import seed_curriculum
 
 logging.basicConfig(level=logging.INFO)
@@ -30,7 +30,7 @@ async def main():
     
     try:
         # Create a session and run the seeder
-        async with SessionLocal() as session:
+        async with async_session_factory() as session:
             await seed_curriculum(session)
     except Exception as e:
         logger.error(f"Seeding failed: {e}")
