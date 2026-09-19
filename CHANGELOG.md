@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.10.0] — 2026-09-19
+
+### Added — Session 10: Daily Task UI
+
+#### UI Components
+- `Tasks.tsx` — Interactive daily task manager mapping to the `/tasks` route.
+- **Task Generation**: Form to select a day number and generate tasks via `POST /api/v1/tasks/generate`.
+- **Status Toggling**: Real-time optimistic UI updates utilizing Axios `PATCH` requests to cycle through task and subtask statuses (`todo`, `in_progress`, `completed`).
+- **Cyber Styling**: Striking visual feedback with neon strike-throughs for completed items, pulsing neon highlights for in-progress items, and distinct structural glassmorphism layouts separating Tasks from Subtasks.
+
+#### Architecture
+- `task.ts` — Frontend TypeScript interfaces (`Task`, `Subtask`, `TaskStatus`, `TaskGenerationRequest`) strictly matching the FastAPI schemas.
+- Removed the `/tasks` placeholder in `App.tsx` and mapped it to the new `Tasks` component.
+
+---
+
 ## [0.9.0] — 2026-09-19
 
 ### Added — Session 9: Curriculum View UI

@@ -1,13 +1,23 @@
 # Project Status
 
-## Current Session: 9 — Curriculum View UI ✅
+## Current Session: 10 — Daily Task UI ✅
 
 **Date**: 2026-09-19  
-**Version**: 0.9.0
+**Version**: 0.10.0
 
 ---
 
 ## Completed Work
+
+### Session 10 — Daily Task UI
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Tasks page | ✅ Done | `/tasks` route |
+| Generate tasks | ✅ Done | Input for day number, calls `POST /api/v1/tasks/generate` |
+| View tasks | ✅ Done | Displays tasks and subtasks for the day with estimated hours |
+| Status toggle | ✅ Done | Optimistic UI updates with Axios `PATCH` requests |
+| Cyber styling | ✅ Done | Neon strike-throughs for completed items, pulsing for in-progress |
 
 ### Session 9 — Curriculum View UI
 
@@ -124,16 +134,15 @@
 
 ---
 
-## Next Session: Session 10 — Daily Task UI
+## Next Session: Session 11 — Dashboard Overview & Polish
 
 ### Objective
-- Create `Tasks.tsx` page mapping to `/tasks`
-- Implement a generation button that calls `POST /api/v1/tasks/generate`
-- Fetch and display today's tasks via `GET /api/v1/tasks/today`
-- Implement status toggle logic (todo -> in_progress -> completed) via `PATCH /api/v1/tasks/{id}`
+- Create `Dashboard.tsx` mapping to `/` route
+- Aggregate stats from `/api/v1/curriculum/stats` and `/api/v1/tasks/today`
+- Provide high-level progress tracking
+- Polish final CSS and interactions across the app
 
 ### Acceptance Criteria
-- User can generate tasks for the current day
-- Tasks and Subtasks are displayed in an actionable checklist view
-- Checkbox/toggles immediately update backend state using Axios
-- Cyber-aesthetic checklist styling with neon strike-through for completed items
+- User sees a high-level summary of the curriculum and their daily task progress
+- Empty states are handled gracefully
+- Dashboard utilizes full aesthetic potential of the theme
