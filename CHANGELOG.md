@@ -6,6 +6,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.4.0] — 2026-09-19
+
+### Added — Session 4: Curriculum Model
+
+#### Curriculum Models
+- `Phase` ORM model (top-level grouping)
+- `SkillLayer` ORM model (major skill category, maps to the 13 roadmap items)
+- `Domain` ORM model (sub-area within a skill layer)
+- `Topic` ORM model (individual learning topic, mapped to a day in the 196-day plan)
+- `LearningObjective` ORM model (specific measurable learning goal)
+- Alembic migration for all curriculum tables with foreign keys and cascade deletes
+
+#### Curriculum Endpoints
+- `GET /api/v1/curriculum/phases` — List all phases
+- `GET /api/v1/curriculum/phases/{phase_id}` — Get phase with skill layers
+- `GET /api/v1/curriculum/phases/{phase_id}/full` — Get phase with full hierarchy
+- `GET /api/v1/curriculum/skill-layers/{layer_id}` — Get skill layer with domains
+- `GET /api/v1/curriculum/domains/{domain_id}` — Get domain with topics
+- `GET /api/v1/curriculum/topics/{topic_id}` — Get topic with objectives
+- `GET /api/v1/curriculum/day/{day_number}` — Get topics for a specific day
+- `GET /api/v1/curriculum/stats` — Curriculum statistics
+
+#### Architecture
+- `models/curriculum.py` — Hierarchical ORM models
+- `repositories/curriculum.py` — Data access layer with eager-loading queries
+- `api/v1/curriculum.py` — Read-only curriculum router
+- `schemas/curriculum.py` — Pydantic schemas with brief/detail/full nesting levels
+
+#### Tests
+- 25 new curriculum tests (models, schemas, and endpoints)
+- All 74 tests pass without requiring a live PostgreSQL instance
+
+---
+
 ## [0.3.0] — 2026-09-19
 
 ### Added — Session 3: Authentication
