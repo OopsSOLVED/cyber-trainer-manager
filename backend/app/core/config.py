@@ -62,11 +62,21 @@ class Settings(BaseSettings):
         """Parse comma-separated CORS origins into a list."""
         return [origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()]
 
+    from pydantic import model_validator
+    
+    @model_validator(mode='after')
+    def fix_database_url(self) -> 'Settings':
+        if self.DATABASE_URL and self.DATABASE_URL.startswith("postgres://"):
+            self.DATABASE_URL = self.DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)
+        elif self.DATABASE_URL and self.DATABASE_URL.startswith("postgresql://"):
+            self.DATABASE_URL = self.DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return self
+
     @property
     def database_url_sync(self) -> str:
         """Return a synchronous database URL for Alembic migrations."""
-        return self.DATABASE_URL.replace("+asyncpg", "+psycopg2").replace(
-            "postgresql+psycopg2", "postgresql"
+        return self.DATABASE_URL.replace("+asyncpg", "").replace(
+            "postgresql", "postgresql"
         )
 
     model_config = {
