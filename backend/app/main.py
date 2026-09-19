@@ -50,6 +50,19 @@ async def lifespan(app: FastAPI):
         "development" if settings.DEBUG else "production",
     )
     await init_db()
+    
+    # Auto-seed the database if it's empty (perfect for cloud deployments)
+    from app.core.database import SessionLocal
+    from sqlalchemy import select
+    from app.models.curriculum import Phase
+    from app.db.seeder import seed_curriculum
+    
+    async with SessionLocal() as session:
+        result = await session.execute(select(Phase).limit(1))
+        if not result.scalar_first():
+            logger.info("Database is empty. Running automatic seeder...")
+            await seed_curriculum(session)
+            
     yield
     await close_db()
     logger.info("Application shutdown complete.")
