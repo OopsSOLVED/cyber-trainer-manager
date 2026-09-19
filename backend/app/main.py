@@ -59,7 +59,7 @@ async def lifespan(app: FastAPI):
     
     async with async_session_factory() as session:
         result = await session.execute(select(Phase).limit(1))
-        if not result.scalar_first():
+        if not result.scalars().first():
             logger.info("Database is empty. Running automatic seeder...")
             await seed_curriculum(session)
             
