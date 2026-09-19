@@ -26,6 +26,10 @@ class Settings(BaseSettings):
         default="change-me-in-production",
         description="Secret key for signing tokens. Must be changed in production.",
     )
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(
+        default=30,
+        description="JWT access token expiration in minutes.",
+    )
 
     # ── Database ─────────────────────────────────────────────────
     DATABASE_URL: str = Field(

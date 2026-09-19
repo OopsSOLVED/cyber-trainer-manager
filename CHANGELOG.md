@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.3.0] — 2026-09-19
+
+### Added — Session 3: Authentication
+
+#### User Model
+- `User` ORM model with email, hashed_password, is_active, is_superuser, display_name, last_login_at
+- Alembic migration to create `users` table with unique email index
+
+#### Authentication Endpoints
+- `POST /api/v1/auth/register` — Create new user account (email validation, password >= 8 chars)
+- `POST /api/v1/auth/login` — Authenticate and receive JWT access token
+- `GET /api/v1/auth/me` — Get current user profile (protected)
+
+#### Security
+- Password hashing with bcrypt (direct, not via passlib — avoids bcrypt 5.x compat issues)
+- JWT access tokens with HS256 signing (configurable expiration)
+- OAuth2 Bearer token scheme
+- Active/inactive account enforcement
+- Superuser guard dependency for admin-only endpoints
+
+#### Architecture
+- `services/auth.py` — Password hashing + JWT creation/validation
+- `repositories/user.py` — Data access layer for User queries
+- `api/deps.py` — `get_current_user` and `get_current_superuser` FastAPI dependencies
+- `schemas/auth.py` — Pydantic request/response models with email validation
+
+#### Tests
+- 26 new auth tests (password hashing, JWT tokens, registration, login, protected endpoints)
+- All 52 tests pass without requiring a live PostgreSQL instance
+
+---
+
 ## [0.2.0] — 2026-09-19
 
 ### Added — Session 2: Database Foundation
