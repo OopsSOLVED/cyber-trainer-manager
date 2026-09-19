@@ -1,13 +1,23 @@
 # Project Status
 
-## Current Session: 6 — Database Seeding ✅
+## Current Session: 7 — Frontend Project Scaffold ✅
 
 **Date**: 2026-09-19  
-**Version**: 0.6.0
+**Version**: 0.7.0
 
 ---
 
 ## Completed Work
+
+### Session 7 — Frontend Project Scaffold
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Tailwind CSS | ✅ Done | Configured v3 with custom cyber aesthetic |
+| Layout Components | ✅ Done | Sidebar, Header, and MainLayout |
+| React Router | ✅ Done | Configured in App.tsx with baseline routes |
+| Axios Setup | ✅ Done | `api.ts` with global JWT interceptors |
+| Zustand Store | ✅ Done | `useAuthStore.ts` for managing user state |
 
 ### Session 6 — Database Seeding
 
@@ -96,17 +106,16 @@
 
 ---
 
-## Next Session: Session 7 — Frontend Project Scaffold
+## Next Session: Session 8 — Authentication UI & Integration
 
 ### Objective
-- Set up Vite / React / TypeScript scaffolding
-- Implement Tailwind CSS (v3) for styling
-- Create core layout components (Sidebar, Header, Main content area)
-- Setup React Router for navigation
-- Setup Axios for API calls and state management (Zustand or Context)
+- Create Login and Registration pages with matching cyber aesthetics
+- Implement login form submission via Axios
+- Hook the response into the Zustand auth store
+- Implement protected routes wrapper
 
 ### Acceptance Criteria
-- React app runs on port 5173
-- Tailwind CSS is configured and works
-- Navigation sidebar works with dummy links
-- Responsive layout handles mobile screens
+- User can successfully register and log in via the UI
+- Invalid credentials show an error message
+- Unauthenticated users cannot view the dashboard and are redirected to login
+- Logged in users see their display name in the Sidebar

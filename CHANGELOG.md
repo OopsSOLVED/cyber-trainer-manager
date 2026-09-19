@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.7.0] — 2026-09-19
+
+### Added — Session 7: Frontend Project Scaffold
+
+#### UI & Layout
+- Configured Tailwind CSS v3 with a custom "Cyber" color palette (neon greens, deep darks, purples).
+- Created `Sidebar.tsx` for main navigation with active state styling.
+- Created `Header.tsx` with a search bar and notifications layout.
+- Created `MainLayout.tsx` structure wrapping the React Router `<Outlet />`.
+- Created a dummy `Dashboard.tsx` with a stunning cyber-aesthetic grid for stats and activity placeholders.
+
+#### Architecture
+- Configured `React Router` in `App.tsx` with baseline routes (`/`, `/curriculum`, `/tasks`, `/labs`, `/settings`).
+- Created `api.ts` using `axios` with global JWT request interception and 401 response handling.
+- Implemented `useAuthStore.ts` using `zustand` to manage user authentication state.
+
+---
+
 ## [0.6.0] — 2026-09-19
 
 ### Added — Session 6: Database Seeding
