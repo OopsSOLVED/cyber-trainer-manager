@@ -4,9 +4,6 @@ Health check endpoints.
 Provides liveness and readiness probes for the application.
 - /health — Basic liveness check (is the process running?)
 - /health/readiness — Readiness check (are dependencies available?)
-
-The readiness endpoint will be extended in Session 2 to include
-database connectivity checks.
 """
 
 from datetime import datetime, timezone
@@ -14,6 +11,7 @@ from datetime import datetime, timezone
 from fastapi import APIRouter
 
 from app.core.config import settings
+from app.core.database import check_db_health
 
 router = APIRouter(prefix="/health", tags=["Health"])
 
@@ -50,16 +48,15 @@ async def readiness_check():
     """
     Readiness probe that verifies external dependencies.
 
-    Currently checks:
+    Checks:
     - Application process (always true if responding)
-
-    Will be extended in Session 2 to check:
     - PostgreSQL connectivity
-    - Redis connectivity (when implemented)
     """
+    db_healthy = await check_db_health()
+
     checks = {
         "application": True,
-        # Session 2: "database": await check_db_connection(),
+        "database": db_healthy,
         # Future: "redis": await check_redis_connection(),
     }
 

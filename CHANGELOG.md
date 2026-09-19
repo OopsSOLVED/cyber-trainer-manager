@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.2.0] — 2026-09-19
+
+### Added — Session 2: Database Foundation
+
+#### Database Infrastructure
+- Async SQLAlchemy engine with connection pooling (`core/database.py`)
+- Async session factory with FastAPI dependency injection (`get_db`)
+- Base ORM model with id, created_at, updated_at columns (`models/base.py`)
+- Consistent naming conventions for Alembic migrations
+- Database lifecycle management (init_db, close_db) integrated into app lifespan
+- Database health check function (`check_db_health`) for readiness probe
+
+#### Alembic Migrations
+- Alembic initialized with async env.py configuration
+- `alembic.ini` configured with project database URL
+- Initial migration revision (empty — Base is abstract)
+
+#### Configuration
+- `DATABASE_TEST_URL` setting for test isolation
+- `database_url_sync` property for Alembic compatibility
+
+#### Readiness Endpoint
+- `/api/v1/health/readiness` now checks real database connectivity
+- Reports "degraded" status when PostgreSQL is unreachable
+
+#### Tests
+- 15 new database tests (config, engine, Base model, health check, lifecycle, session)
+- Updated health tests with mocked DB fixtures (healthy + degraded states)
+- All 26 tests pass without requiring a live PostgreSQL instance
+
+---
+
 ## [0.1.0] — 2026-09-17
 
 ### Added — Session 1: Project Foundation

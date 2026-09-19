@@ -27,10 +27,15 @@ class Settings(BaseSettings):
         description="Secret key for signing tokens. Must be changed in production.",
     )
 
-    # ── Database (Session 2+) ────────────────────────────────────
+    # ── Database ─────────────────────────────────────────────────
     DATABASE_URL: str = Field(
         default="postgresql+asyncpg://postgres:postgres@localhost:5432/cyber_trainer",
-        description="PostgreSQL connection string.",
+        description="PostgreSQL connection string (async driver).",
+    )
+
+    DATABASE_TEST_URL: str = Field(
+        default="postgresql+asyncpg://postgres:postgres@localhost:5432/cyber_trainer_test",
+        description="PostgreSQL connection string for tests. Separate DB to avoid data conflicts.",
     )
 
     # ── Redis (future sessions) ──────────────────────────────────
@@ -52,6 +57,13 @@ class Settings(BaseSettings):
     def cors_origins_list(self) -> List[str]:
         """Parse comma-separated CORS origins into a list."""
         return [origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()]
+
+    @property
+    def database_url_sync(self) -> str:
+        """Return a synchronous database URL for Alembic migrations."""
+        return self.DATABASE_URL.replace("+asyncpg", "+psycopg2").replace(
+            "postgresql+psycopg2", "postgresql"
+        )
 
     model_config = {
         "env_file": ".env",

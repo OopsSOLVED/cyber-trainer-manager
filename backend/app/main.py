@@ -12,6 +12,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.core.database import init_db, close_db
 from app.api.v1.health import router as health_router
 
 # ── Logging Configuration ────────────────────────────────────────
@@ -32,11 +33,11 @@ async def lifespan(app: FastAPI):
 
     Startup:
     - Log application start
-    - (Session 2+) Initialize database connection pool
+    - Initialize database connection pool
     - (Future) Initialize Redis connection
 
     Shutdown:
-    - (Session 2+) Close database connection pool
+    - Close database connection pool
     - (Future) Close Redis connection
     """
     logger.info(
@@ -45,9 +46,9 @@ async def lifespan(app: FastAPI):
         settings.APP_VERSION,
         "development" if settings.DEBUG else "production",
     )
-    # Session 2: await init_db()
+    await init_db()
     yield
-    # Session 2: await close_db()
+    await close_db()
     logger.info("Application shutdown complete.")
 
 
