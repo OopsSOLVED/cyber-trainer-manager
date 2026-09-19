@@ -1,6 +1,16 @@
-import { Bell, Search, Menu } from 'lucide-react';
+import { Bell, Search, Menu, LogOut } from 'lucide-react';
+import { useAuthStore } from '../../store/useAuthStore';
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
+  const { logout } = useAuthStore();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <header className="h-16 bg-cyber-darker/80 backdrop-blur-md border-b border-cyber-border flex items-center justify-between px-6 sticky top-0 z-10">
       <div className="flex items-center">
@@ -21,6 +31,13 @@ export function Header() {
         <button className="relative p-2 text-cyber-muted hover:text-white transition-colors">
           <Bell className="w-5 h-5" />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-cyber-neon rounded-full shadow-[0_0_5px_#00ff9d]"></span>
+        </button>
+        <button 
+          onClick={handleLogout}
+          className="p-2 text-cyber-muted hover:text-red-500 transition-colors"
+          title="Logout"
+        >
+          <LogOut className="w-5 h-5" />
         </button>
       </div>
     </header>

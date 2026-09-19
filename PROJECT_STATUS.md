@@ -1,13 +1,22 @@
 # Project Status
 
-## Current Session: 7 — Frontend Project Scaffold ✅
+## Current Session: 8 — Authentication UI & Integration ✅
 
 **Date**: 2026-09-19  
-**Version**: 0.7.0
+**Version**: 0.8.0
 
 ---
 
 ## Completed Work
+
+### Session 8 — Authentication UI & Integration
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Login & Register Pages | ✅ Done | Forms, error handling, Axios integration |
+| ProtectedRoute | ✅ Done | Verifies token on load, redirects to `/login` if invalid |
+| Layout Auth State | ✅ Done | Sidebar shows user name, Header has working logout |
+| SVG Pattern | ✅ Done | Cyber aesthetic background grid |
 
 ### Session 7 — Frontend Project Scaffold
 
@@ -106,16 +115,14 @@
 
 ---
 
-## Next Session: Session 8 — Authentication UI & Integration
+## Next Session: Session 9 — Curriculum View UI
 
 ### Objective
-- Create Login and Registration pages with matching cyber aesthetics
-- Implement login form submission via Axios
-- Hook the response into the Zustand auth store
-- Implement protected routes wrapper
+- Create `Curriculum.tsx` page mapping to `/curriculum`
+- Fetch and display the full curriculum hierarchy from `/api/v1/curriculum/phases`
+- Implement accordion/dropdown behavior for nested components (Phases -> Skill Layers -> Domains)
 
 ### Acceptance Criteria
-- User can successfully register and log in via the UI
-- Invalid credentials show an error message
-- Unauthenticated users cannot view the dashboard and are redirected to login
-- Logged in users see their display name in the Sidebar
+- User can view the high-level outline of the 196-day curriculum
+- Each node can be expanded to view underlying topics and objectives
+- Follows the cyber-aesthetic with distinct colors for different layers

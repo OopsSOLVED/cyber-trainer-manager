@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainLayout } from './components/layout/MainLayout';
 import { Dashboard } from './pages/Dashboard';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { ProtectedRoute } from './components/layout/ProtectedRoute';
 
 // Dummy components for unbuilt routes
 const Placeholder = ({ title }: { title: string }) => (
@@ -16,7 +19,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        
+        <Route path="/" element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
           <Route index element={<Dashboard />} />
           <Route path="curriculum" element={<Placeholder title="Curriculum" />} />
           <Route path="tasks" element={<Placeholder title="Daily Tasks" />} />

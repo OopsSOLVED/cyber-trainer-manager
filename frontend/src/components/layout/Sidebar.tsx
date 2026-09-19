@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { useAuthStore } from '../../store/useAuthStore';
 
 const navItems = [
   { name: 'Dashboard', path: '/', icon: LayoutDashboard },
@@ -20,6 +21,7 @@ const navItems = [
 
 export function Sidebar() {
   const location = useLocation();
+  const { user } = useAuthStore();
 
   return (
     <aside className="w-64 h-screen bg-cyber-darker border-r border-cyber-border flex flex-col hidden md:flex">
@@ -59,11 +61,11 @@ export function Sidebar() {
       <div className="p-4 border-t border-cyber-border">
         <div className="flex items-center">
           <div className="w-8 h-8 rounded-full bg-cyber-accent/20 border border-cyber-accent flex items-center justify-center text-cyber-accent font-bold">
-            U
+            {user?.display_name ? user.display_name.charAt(0).toUpperCase() : 'U'}
           </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-white">Test User</p>
-            <p className="text-xs text-cyber-muted">Phase 1: Foundations</p>
+          <div className="ml-3 truncate">
+            <p className="text-sm font-medium text-white truncate">{user?.display_name || 'Loading...'}</p>
+            <p className="text-xs text-cyber-muted truncate">{user?.email || ''}</p>
           </div>
         </div>
       </div>

@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.8.0] — 2026-09-19
+
+### Added — Session 8: Authentication UI & Integration
+
+#### UI Components
+- `Login.tsx` — Login page featuring responsive glassmorphism panels, error handling, and form submission via Axios.
+- `Register.tsx` — Registration page with automatic login upon success.
+- `grid-pattern.svg` — Custom subtle background pattern for auth pages.
+
+#### Architecture
+- `ProtectedRoute.tsx` — Wrapper component that checks token validity via `/api/v1/auth/me` on initial load, showing an "INITIALIZING" state, and redirecting unauthorized users to `/login`.
+- Updated `Sidebar.tsx` and `Header.tsx` to read the logged-in user's profile from the Zustand `useAuthStore` and properly log them out via the `api.ts` interceptor and state clearing.
+
+---
+
 ## [0.7.0] — 2026-09-19
 
 ### Added — Session 7: Frontend Project Scaffold
