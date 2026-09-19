@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.6.0] — 2026-09-19
+
+### Added — Session 6: Database Seeding
+
+#### Curriculum Seeder
+- `curriculum_data.json` — Subset of the 196-day cybersecurity roadmap covering Phase 1 (Foundations) and Phase 2 (Security & Exploitation) structured by skill layers, domains, topics, and objectives.
+- `seeder.py` — Database seeder logic using SQLAlchemy to idempotently parse and insert the curriculum hierarchy.
+- `seed.py` — CLI execution script (`python -m scripts.seed`) to initialize DB connection pool and trigger seeding.
+
+#### Tests
+- 3 new tests in `test_seeder.py` verifying JSON parsing, table clearing, and idempotent insertion logic.
+- Total tests: 89 passing tests.
+
+---
+
 ## [0.5.0] — 2026-09-19
 
 ### Added — Session 5: Task System

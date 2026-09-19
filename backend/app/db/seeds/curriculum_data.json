@@ -1,0 +1,178 @@
+[
+    {
+        "name": "Phase 1: Foundations",
+        "description": "Core computer science, networking, and OS fundamentals.",
+        "order": 1,
+        "skill_layers": [
+            {
+                "name": "Computer Foundations",
+                "description": "Hardware, memory, CPU architecture, and basic computing concepts.",
+                "order": 1,
+                "estimated_days": 10,
+                "domains": [
+                    {
+                        "name": "Computing Architecture",
+                        "description": "How computers work under the hood.",
+                        "order": 1,
+                        "estimated_days": 5,
+                        "topics": [
+                            {
+                                "name": "CPU and Memory",
+                                "description": "Registers, RAM, Cache, and CPU execution cycle.",
+                                "order": 1,
+                                "day_number": 1,
+                                "estimated_hours": 3.0,
+                                "difficulty": "beginner",
+                                "objectives": [
+                                    {"description": "Explain the fetch-decode-execute cycle.", "order": 1},
+                                    {"description": "Differentiate between L1/L2 cache and RAM.", "order": 2}
+                                ]
+                            },
+                            {
+                                "name": "Storage and File Systems",
+                                "description": "HDDs, SSDs, and basic file system concepts.",
+                                "order": 2,
+                                "day_number": 2,
+                                "estimated_hours": 2.5,
+                                "difficulty": "beginner",
+                                "objectives": [
+                                    {"description": "Compare block vs file storage.", "order": 1}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Networking",
+                "description": "Network protocols, OSI model, routing, and switching.",
+                "order": 2,
+                "estimated_days": 20,
+                "domains": [
+                    {
+                        "name": "TCP/IP Fundamentals",
+                        "description": "The core protocols of the internet.",
+                        "order": 1,
+                        "estimated_days": 10,
+                        "topics": [
+                            {
+                                "name": "OSI and TCP/IP Models",
+                                "description": "Understanding network layers.",
+                                "order": 1,
+                                "day_number": 11,
+                                "estimated_hours": 4.0,
+                                "difficulty": "intermediate",
+                                "objectives": [
+                                    {"description": "List the 7 layers of the OSI model.", "order": 1},
+                                    {"description": "Map TCP/IP layers to the OSI model.", "order": 2}
+                                ]
+                            },
+                            {
+                                "name": "IPv4 and Subnetting",
+                                "description": "IP addressing and CIDR notation.",
+                                "order": 2,
+                                "day_number": 12,
+                                "estimated_hours": 5.0,
+                                "difficulty": "intermediate",
+                                "objectives": [
+                                    {"description": "Calculate network and broadcast addresses from a CIDR block.", "order": 1},
+                                    {"description": "Identify private vs public IP ranges.", "order": 2}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Linux",
+                "description": "Linux OS administration, command line, and permissions.",
+                "order": 3,
+                "estimated_days": 15,
+                "domains": [
+                    {
+                        "name": "Linux Command Line",
+                        "description": "Navigating and managing Linux systems.",
+                        "order": 1,
+                        "estimated_days": 5,
+                        "topics": [
+                            {
+                                "name": "Navigation and File Management",
+                                "description": "Basic bash commands.",
+                                "order": 1,
+                                "day_number": 31,
+                                "estimated_hours": 2.0,
+                                "difficulty": "beginner",
+                                "objectives": [
+                                    {"description": "Use cd, ls, pwd, mkdir, rm.", "order": 1}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Phase 2: Security & Exploitation",
+        "description": "Offensive security, web apps, and enterprise environments.",
+        "order": 2,
+        "skill_layers": [
+            {
+                "name": "Offensive Security / Penetration Testing",
+                "description": "Methodologies and tools for offensive security.",
+                "order": 5,
+                "estimated_days": 30,
+                "domains": [
+                    {
+                        "name": "Reconnaissance & Enumeration",
+                        "description": "Gathering intelligence on target systems.",
+                        "order": 1,
+                        "estimated_days": 10,
+                        "topics": [
+                            {
+                                "name": "Active Recon with Nmap",
+                                "description": "Port scanning and service enumeration.",
+                                "order": 1,
+                                "day_number": 75,
+                                "estimated_hours": 4.0,
+                                "difficulty": "intermediate",
+                                "objectives": [
+                                    {"description": "Run a SYN scan with service version detection.", "order": 1},
+                                    {"description": "Use Nmap scripting engine (NSE) for vulnerability discovery.", "order": 2}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Web and Application Security",
+                "description": "OWASP Top 10 and modern web vulnerabilities.",
+                "order": 6,
+                "estimated_days": 25,
+                "domains": [
+                    {
+                        "name": "Injection Vulnerabilities",
+                        "description": "SQLi, Command Injection, and XSS.",
+                        "order": 1,
+                        "estimated_days": 8,
+                        "topics": [
+                            {
+                                "name": "SQL Injection (SQLi)",
+                                "description": "Exploiting database queries.",
+                                "order": 1,
+                                "day_number": 105,
+                                "estimated_hours": 6.0,
+                                "difficulty": "advanced",
+                                "objectives": [
+                                    {"description": "Identify union-based SQL injection.", "order": 1},
+                                    {"description": "Extract data using boolean blind SQLi.", "order": 2}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

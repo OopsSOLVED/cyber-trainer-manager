@@ -1,13 +1,22 @@
 # Project Status
 
-## Current Session: 5 — Task System ✅
+## Current Session: 6 — Database Seeding ✅
 
 **Date**: 2026-09-19  
-**Version**: 0.5.0
+**Version**: 0.6.0
 
 ---
 
 ## Completed Work
+
+### Session 6 — Database Seeding
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Curriculum JSON | ✅ Done | Phase 1 & 2 roadmap structure |
+| Seeder script | ✅ Done | SQLAlchemy logic to idempotently insert data |
+| CLI Runner | ✅ Done | `python -m scripts.seed` |
+| Tests | ✅ Done | 3 seeder tests |
 
 ### Session 5 — Task System
 
@@ -87,15 +96,17 @@
 
 ---
 
-## Next Session: Session 6 — Database Seeding
+## Next Session: Session 7 — Frontend Project Scaffold
 
 ### Objective
-- Python seeding script to populate the curriculum tables
-- Seed JSON files containing the actual cybersecurity roadmap data
-- Alembic `seeds` folder structure
+- Set up Vite / React / TypeScript scaffolding
+- Implement Tailwind CSS (v3) for styling
+- Create core layout components (Sidebar, Header, Main content area)
+- Setup React Router for navigation
+- Setup Axios for API calls and state management (Zustand or Context)
 
 ### Acceptance Criteria
-- Seeder successfully inserts 4 Phases, 13 SkillLayers, Domains, Topics, and Objectives
-- Relationships are preserved correctly
-- Seed operation is idempotent (can run multiple times safely)
-- A command exists to run the seeders easily
+- React app runs on port 5173
+- Tailwind CSS is configured and works
+- Navigation sidebar works with dummy links
+- Responsive layout handles mobile screens
