@@ -11,6 +11,7 @@ services:
   - type: redis
     name: cyber-trainer-redis
     plan: free
+    ipAllowList: [] # Allows internal connections from your backend only
     maxmemoryPolicy: allkeys-lru
 
   # FastAPI Backend
