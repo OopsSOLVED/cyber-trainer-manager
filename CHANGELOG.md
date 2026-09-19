@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.9.0] — 2026-09-19
+
+### Added — Session 9: Curriculum View UI
+
+#### UI Components
+- `Curriculum.tsx` — An interactive, lazy-loading accordion view of the entire 196-day cybersecurity roadmap.
+- Implemented node components (`SkillLayerNode`, `DomainNode`, `TopicNode`) that recursively lazy-load and display child elements.
+- Styled with Tailwind CSS matching the cyber-aesthetic (neon green, purple, and blue tier coloring).
+- Uses `lucide-react` icons (ChevronRight, ChevronDown, Target, Clock, Shield) to denote hierarchy, difficulty, and duration.
+
+#### Architecture
+- `curriculum.ts` — Frontend TypeScript interfaces (`Phase`, `SkillLayer`, `Domain`, `Topic`, `Objective`) mapping directly to the backend Pydantic models.
+- Replaced the placeholder `/curriculum` route in `App.tsx` with the new Curriculum component.
+
+---
+
 ## [0.8.0] — 2026-09-19
 
 ### Added — Session 8: Authentication UI & Integration

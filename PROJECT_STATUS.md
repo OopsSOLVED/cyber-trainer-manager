@@ -1,13 +1,22 @@
 # Project Status
 
-## Current Session: 8 — Authentication UI & Integration ✅
+## Current Session: 9 — Curriculum View UI ✅
 
 **Date**: 2026-09-19  
-**Version**: 0.8.0
+**Version**: 0.9.0
 
 ---
 
 ## Completed Work
+
+### Session 9 — Curriculum View UI
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Curriculum page | ✅ Done | `/curriculum` route |
+| Lazy loading API | ✅ Done | Recursively loads children to avoid massive payloads |
+| Hierarchical tree | ✅ Done | SkillLayer -> Domain -> Topic -> Objective |
+| Cyber styling | ✅ Done | Distinct tier colors, icons, and glassmorphism |
 
 ### Session 8 — Authentication UI & Integration
 
@@ -115,14 +124,16 @@
 
 ---
 
-## Next Session: Session 9 — Curriculum View UI
+## Next Session: Session 10 — Daily Task UI
 
 ### Objective
-- Create `Curriculum.tsx` page mapping to `/curriculum`
-- Fetch and display the full curriculum hierarchy from `/api/v1/curriculum/phases`
-- Implement accordion/dropdown behavior for nested components (Phases -> Skill Layers -> Domains)
+- Create `Tasks.tsx` page mapping to `/tasks`
+- Implement a generation button that calls `POST /api/v1/tasks/generate`
+- Fetch and display today's tasks via `GET /api/v1/tasks/today`
+- Implement status toggle logic (todo -> in_progress -> completed) via `PATCH /api/v1/tasks/{id}`
 
 ### Acceptance Criteria
-- User can view the high-level outline of the 196-day curriculum
-- Each node can be expanded to view underlying topics and objectives
-- Follows the cyber-aesthetic with distinct colors for different layers
+- User can generate tasks for the current day
+- Tasks and Subtasks are displayed in an actionable checklist view
+- Checkbox/toggles immediately update backend state using Axios
+- Cyber-aesthetic checklist styling with neon strike-through for completed items
