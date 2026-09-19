@@ -22,6 +22,9 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade() -> None:
     """Create tasks and subtasks tables."""
+    # Ensure a clean slate if migration failed previously
+    op.execute("DROP TYPE IF EXISTS task_status CASCADE;")
+    
     # Create Enum type
     task_status = postgresql.ENUM('TODO', 'IN_PROGRESS', 'COMPLETED', 'BLOCKED', 'SKIPPED', name='task_status', create_type=False)
     task_status.create(op.get_bind(), checkfirst=True)
