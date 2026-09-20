@@ -90,3 +90,56 @@ class TestCurriculumSeeder:
         assert mock_db.add.call_count == 5
         assert mock_db.commit.called
         assert mock_db.flush.called
+
+    @pytest.mark.asyncio
+    async def test_full_curriculum_contains_196_days(self):
+        """The actual curriculum_data.json must contain exactly 196 days."""
+        data = await load_curriculum_json()
+        days = []
+        for phase in data:
+            for layer in phase.get("skill_layers", []):
+                for domain in layer.get("domains", []):
+                    for topic in domain.get("topics", []):
+                        if topic.get("day_number") is not None:
+                            days.append(topic["day_number"])
+        assert len(days) == 196
+
+    @pytest.mark.asyncio
+    async def test_days_are_sequential_and_complete(self):
+        """All 196 days must be sequential from 1 to 196 with zero gaps or duplicates."""
+        data = await load_curriculum_json()
+        days = []
+        for phase in data:
+            for layer in phase.get("skill_layers", []):
+                for domain in layer.get("domains", []):
+                    for topic in domain.get("topics", []):
+                        if topic.get("day_number") is not None:
+                            days.append(topic["day_number"])
+        assert sorted(days) == list(range(1, 197))
+        assert len(set(days)) == 196
+
+    @pytest.mark.asyncio
+    async def test_all_phases_and_layers_defined(self):
+        """Verify the 4 roadmap phases and essential skill layers are structured."""
+        data = await load_curriculum_json()
+        phase_names = [p["name"] for p in data]
+        assert len(phase_names) == 4
+        assert any("Foundations" in p for p in phase_names)
+        assert any("Exploitation" in p for p in phase_names)
+        assert any("Defensive" in p for p in phase_names)
+        assert any("Trainer" in p for p in phase_names)
+
+    @pytest.mark.asyncio
+    async def test_all_topics_have_measurable_objectives(self):
+        """Every topic must have at least one measurable learning objective."""
+        data = await load_curriculum_json()
+        for phase in data:
+            for layer in phase.get("skill_layers", []):
+                for domain in layer.get("domains", []):
+                    for topic in domain.get("topics", []):
+                        objectives = topic.get("objectives", [])
+                        assert len(objectives) >= 1, f"Topic {topic['name']} has no objectives"
+                        for obj in objectives:
+                            assert "description" in obj
+                            assert len(obj["description"]) > 5
+

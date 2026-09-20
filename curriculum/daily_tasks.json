@@ -1,0 +1,2942 @@
+[
+  {
+    "day_number": 1,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 1 \u2014 Cpu, Ram, Storage, Kernel, User Space",
+    "description": "Hardware, memory, execution cycle, and protection rings.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of CPU, RAM, storage, kernel, user space.",
+      "Execute practical exercises and verify operational evidence for CPU, RAM, storage, kernel, user space.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 1."
+    ]
+  },
+  {
+    "day_number": 2,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 2 \u2014 Processes And Process Lifecycle",
+    "description": "Process creation, states, scheduling, and lifecycle management.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of processes and process lifecycle.",
+      "Execute practical exercises and verify operational evidence for processes and process lifecycle.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 2."
+    ]
+  },
+  {
+    "day_number": 3,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 3 \u2014 Threads And Concurrency Basics",
+    "description": "Multithreading, shared memory, race conditions, and synchronization.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of threads and concurrency basics.",
+      "Execute practical exercises and verify operational evidence for threads and concurrency basics.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 3."
+    ]
+  },
+  {
+    "day_number": 4,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 4 \u2014 System Calls And Privilege Boundary",
+    "description": "Kernel privilege boundary, syscall transitions, and strace introduction.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of system calls and privilege boundary.",
+      "Execute practical exercises and verify operational evidence for system calls and privilege boundary.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 4."
+    ]
+  },
+  {
+    "day_number": 5,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 5 \u2014 Filesystems And File Descriptors",
+    "description": "Inodes, file system hierarchy, file descriptors, and stream redirection.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of filesystems and file descriptors.",
+      "Execute practical exercises and verify operational evidence for filesystems and file descriptors.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 5."
+    ]
+  },
+  {
+    "day_number": 6,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 6 \u2014 Network Interfaces And Sockets",
+    "description": "Network adapters, socket API, and kernel network endpoint representations.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of network interfaces and sockets.",
+      "Execute practical exercises and verify operational evidence for network interfaces and sockets.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 6."
+    ]
+  },
+  {
+    "day_number": 7,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Computer Foundations",
+    "domain": "Computer and OS Foundations",
+    "topic": "Day 7 \u2014 Explain The Complete Program-To-Packet Chain",
+    "description": "Comprehensive synthesis of program -> syscall -> socket -> packet flow.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of explain the complete program-to-packet chain.",
+      "Execute practical exercises and verify operational evidence for explain the complete program-to-packet chain.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 7."
+    ]
+  },
+  {
+    "day_number": 8,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 8 \u2014 Osi Model And Why Layers Exist",
+    "description": "7-layer reference model, protocol encapsulation, and abstraction boundaries.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of OSI model and why layers exist.",
+      "Execute practical exercises and verify operational evidence for OSI model and why layers exist.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 8."
+    ]
+  },
+  {
+    "day_number": 9,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 9 \u2014 Tcp/Ip Model",
+    "description": "4-layer DoD internet model and packet header decapsulation.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of TCP/IP model.",
+      "Execute practical exercises and verify operational evidence for TCP/IP model.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 9."
+    ]
+  },
+  {
+    "day_number": 10,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 10 \u2014 Ethernet Frames",
+    "description": "Data link layer framing, preamble, MTU, and frame check sequence.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of Ethernet frames.",
+      "Execute practical exercises and verify operational evidence for Ethernet frames.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 10."
+    ]
+  },
+  {
+    "day_number": 11,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 11 \u2014 Mac Addressing",
+    "description": "48-bit hardware addresses, OUI parsing, and unicast/multicast/broadcast MACs.",
+    "estimated_hours": 2.5,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of MAC addressing.",
+      "Execute practical exercises and verify operational evidence for MAC addressing.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 11."
+    ]
+  },
+  {
+    "day_number": 12,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 12 \u2014 Arp Fundamentals",
+    "description": "Address Resolution Protocol request/reply cycle and local cache table.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of ARP fundamentals.",
+      "Execute practical exercises and verify operational evidence for ARP fundamentals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 12."
+    ]
+  },
+  {
+    "day_number": 13,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 13 \u2014 Inspect Arp With Wireshark",
+    "description": "Packet capture analysis of live ARP transactions and gratuitous ARP.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of inspect ARP with Wireshark.",
+      "Execute practical exercises and verify operational evidence for inspect ARP with Wireshark.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 13."
+    ]
+  },
+  {
+    "day_number": 14,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "OSI and Ethernet",
+    "topic": "Day 14 \u2014 Weekly Lab + Teach Ethernet/Arp From First Principles",
+    "description": "Consolidated lab exercise and structured teaching presentation on Layer 2.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of weekly lab + teach Ethernet/ARP from first principles.",
+      "Execute practical exercises and verify operational evidence for weekly lab + teach Ethernet/ARP from first principles.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 14."
+    ]
+  },
+  {
+    "day_number": 15,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 15 \u2014 Ipv4",
+    "description": "32-bit addressing, packet headers, TTL mechanics, and private address blocks.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of IPv4.",
+      "Execute practical exercises and verify operational evidence for IPv4.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 15."
+    ]
+  },
+  {
+    "day_number": 16,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 16 \u2014 Subnet Masks",
+    "description": "Bitwise AND operations, network IDs, and host calculation formulas.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of subnet masks.",
+      "Execute practical exercises and verify operational evidence for subnet masks.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 16."
+    ]
+  },
+  {
+    "day_number": 17,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 17 \u2014 Cidr",
+    "description": "Classless Inter-Domain Routing prefix notation and route summarization.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of CIDR.",
+      "Execute practical exercises and verify operational evidence for CIDR.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 17."
+    ]
+  },
+  {
+    "day_number": 18,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 18 \u2014 Subnetting Practice",
+    "description": "Calculation drills and enterprise VLSM subnetting design challenges.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of subnetting practice.",
+      "Execute practical exercises and verify operational evidence for subnetting practice.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 18."
+    ]
+  },
+  {
+    "day_number": 19,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 19 \u2014 Ipv6 Fundamentals",
+    "description": "128-bit address syntax, compression rules, and Neighbor Discovery Protocol.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of IPv6 fundamentals.",
+      "Execute practical exercises and verify operational evidence for IPv6 fundamentals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 19."
+    ]
+  },
+  {
+    "day_number": 20,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 20 \u2014 Routing Fundamentals",
+    "description": "Routing tables, default gateways, static routes, and longest-prefix matching.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of routing fundamentals.",
+      "Execute practical exercises and verify operational evidence for routing fundamentals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 20."
+    ]
+  },
+  {
+    "day_number": 21,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "IP Addressing and Routing",
+    "topic": "Day 21 \u2014 Packet-Path Troubleshooting Exercise",
+    "description": "Diagnosing multi-subnet routing failures and gateway misconfigurations.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of packet-path troubleshooting exercise.",
+      "Execute practical exercises and verify operational evidence for packet-path troubleshooting exercise.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 21."
+    ]
+  },
+  {
+    "day_number": 22,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 22 \u2014 Dhcp",
+    "description": "DORA lifecycle, lease management, option fields, and rogue server security risks.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of DHCP.",
+      "Execute practical exercises and verify operational evidence for DHCP.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 22."
+    ]
+  },
+  {
+    "day_number": 23,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 23 \u2014 Dns",
+    "description": "Hierarchical resolution, root servers, recursive queries, and resource record types.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of DNS.",
+      "Execute practical exercises and verify operational evidence for DNS.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 23."
+    ]
+  },
+  {
+    "day_number": 24,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 24 \u2014 Icmp",
+    "description": "Internet Control Message Protocol error signaling, echo requests, and path MTU.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of ICMP.",
+      "Execute practical exercises and verify operational evidence for ICMP.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 24."
+    ]
+  },
+  {
+    "day_number": 25,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 25 \u2014 Tcp",
+    "description": "Connection-oriented streams, 3-way handshake, flags, sequence numbers, and windowing.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of TCP.",
+      "Execute practical exercises and verify operational evidence for TCP.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 25."
+    ]
+  },
+  {
+    "day_number": 26,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 26 \u2014 Udp",
+    "description": "Connectionless datagram transport, low-latency protocols, and amplification threats.",
+    "estimated_hours": 2.5,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of UDP.",
+      "Execute practical exercises and verify operational evidence for UDP.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 26."
+    ]
+  },
+  {
+    "day_number": 27,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 27 \u2014 Ports And Sockets",
+    "description": "16-bit transport ports, well-known port mapping, and socket pair identification.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of ports and sockets.",
+      "Execute practical exercises and verify operational evidence for ports and sockets.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 27."
+    ]
+  },
+  {
+    "day_number": 28,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Core Network Services",
+    "topic": "Day 28 \u2014 Compare Tcp Vs Udp By Capturing Real Traffic In A Lab",
+    "description": "Side-by-side traffic capture and latency/overhead comparison in Wireshark.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of compare TCP vs UDP by capturing real traffic in a lab.",
+      "Execute practical exercises and verify operational evidence for compare TCP vs UDP by capturing real traffic in a lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 28."
+    ]
+  },
+  {
+    "day_number": 29,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 29 \u2014 Nat",
+    "description": "Source NAT, Destination NAT/Port forwarding, and PAT overload mechanics.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of NAT.",
+      "Execute practical exercises and verify operational evidence for NAT.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 29."
+    ]
+  },
+  {
+    "day_number": 30,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 30 \u2014 Firewalls",
+    "description": "Stateless packet filtering vs stateful inspection and default-deny policies.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of firewalls.",
+      "Execute practical exercises and verify operational evidence for firewalls.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 30."
+    ]
+  },
+  {
+    "day_number": 31,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 31 \u2014 Network Segmentation",
+    "description": "Logical network isolation, 802.1Q VLANs, DMZs, and jump box architectures.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of network segmentation.",
+      "Execute practical exercises and verify operational evidence for network segmentation.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 31."
+    ]
+  },
+  {
+    "day_number": 32,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 32 \u2014 Ids/Ips",
+    "description": "Intrusion detection/prevention architectures, signature vs anomaly models, and inline taps.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of IDS/IPS.",
+      "Execute practical exercises and verify operational evidence for IDS/IPS.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 32."
+    ]
+  },
+  {
+    "day_number": 33,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 33 \u2014 Vpns And Proxies",
+    "description": "Tunneling protocols (IPsec, WireGuard), forward proxies, and reverse proxy termination.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of VPNs and proxies.",
+      "Execute practical exercises and verify operational evidence for VPNs and proxies.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 33."
+    ]
+  },
+  {
+    "day_number": 34,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 34 \u2014 Traffic Analysis",
+    "description": "Flow monitoring, statistical baselining, anomaly identification, and IO graphs.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of traffic analysis.",
+      "Execute practical exercises and verify operational evidence for traffic analysis.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 34."
+    ]
+  },
+  {
+    "day_number": 35,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Security",
+    "topic": "Day 35 \u2014 Build A Network-Security Troubleshooting Lab",
+    "description": "Hands-on capstone lab: multi-zone firewall configuration and segmentation testing.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of build a network-security troubleshooting lab.",
+      "Execute practical exercises and verify operational evidence for build a network-security troubleshooting lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 35."
+    ]
+  },
+  {
+    "day_number": 36,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 36 \u2014 Nmap Fundamentals",
+    "description": "Network mapping principles, timing templates, and TCP connect vs SYN scan options.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Nmap fundamentals.",
+      "Execute practical exercises and verify operational evidence for Nmap fundamentals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 36."
+    ]
+  },
+  {
+    "day_number": 37,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 37 \u2014 Nmap Host Discovery In An Authorized Lab",
+    "description": "Conducting host discovery sweeps using ARP, ICMP, and TCP ping vectors.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Nmap host discovery in an authorized lab.",
+      "Execute practical exercises and verify operational evidence for Nmap host discovery in an authorized lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 37."
+    ]
+  },
+  {
+    "day_number": 38,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 38 \u2014 Service/Version Enumeration",
+    "description": "Banner grabbing, service fingerprinting, and OS detection workflows.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of service/version enumeration.",
+      "Execute practical exercises and verify operational evidence for service/version enumeration.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 38."
+    ]
+  },
+  {
+    "day_number": 39,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 39 \u2014 Wireshark Workflows",
+    "description": "Advanced display filter syntax, TCP stream following, and protocol hierarchy stats.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Wireshark workflows.",
+      "Execute practical exercises and verify operational evidence for Wireshark workflows.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 39."
+    ]
+  },
+  {
+    "day_number": 40,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 40 \u2014 Tcpdump",
+    "description": "CLI packet capture filtering, BPF syntax, and PCAP inspection.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of tcpdump.",
+      "Execute practical exercises and verify operational evidence for tcpdump.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 40."
+    ]
+  },
+  {
+    "day_number": 41,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 41 \u2014 Ss, Dig, Traceroute/Mtr",
+    "description": "Linux networking diagnostics: socket inspection, recursive DNS tracing, and route mtr.",
+    "estimated_hours": 3.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of ss, dig, traceroute/mtr.",
+      "Execute practical exercises and verify operational evidence for ss, dig, traceroute/mtr.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 41."
+    ]
+  },
+  {
+    "day_number": 42,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Networking",
+    "domain": "Network Tools",
+    "topic": "Day 42 \u2014 Netcat + Integrated Network Investigation Lab",
+    "description": "Arbitrary TCP/UDP connections, banner interaction, and comprehensive diagnostic challenge.",
+    "estimated_hours": 4.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Netcat + integrated network investigation lab.",
+      "Execute practical exercises and verify operational evidence for Netcat + integrated network investigation lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 42."
+    ]
+  },
+  {
+    "day_number": 43,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 43 \u2014 Linux Architecture",
+    "description": "Kernel, shell, GNU utilities, user space separation, and boot sequence overview.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of Linux architecture.",
+      "Execute practical exercises and verify operational evidence for Linux architecture.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 43."
+    ]
+  },
+  {
+    "day_number": 44,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 44 \u2014 Filesystem Hierarchy",
+    "description": "Linux Filesystem Hierarchy Standard (FHS): /etc, /var, /bin, /home, /dev, /tmp.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of filesystem hierarchy.",
+      "Execute practical exercises and verify operational evidence for filesystem hierarchy.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 44."
+    ]
+  },
+  {
+    "day_number": 45,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 45 \u2014 Users And Groups",
+    "description": "User accounts, /etc/passwd, /etc/shadow, /etc/group, and UID/GID management.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of users and groups.",
+      "Execute practical exercises and verify operational evidence for users and groups.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 45."
+    ]
+  },
+  {
+    "day_number": 46,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 46 \u2014 Permissions",
+    "description": "Read, write, execute bits, octal and symbolic modes, and umask calculation.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of permissions.",
+      "Execute practical exercises and verify operational evidence for permissions.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 46."
+    ]
+  },
+  {
+    "day_number": 47,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 47 \u2014 Chmod/Chown",
+    "description": "Modifying ownership and permissions, SUID, SGID, and sticky bit implementation.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of chmod/chown.",
+      "Execute practical exercises and verify operational evidence for chmod/chown.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 47."
+    ]
+  },
+  {
+    "day_number": 48,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 48 \u2014 Processes And Ps",
+    "description": "Process tree inspection (`ps`, `pstree`, `top`), signals, and background jobs.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of processes and ps.",
+      "Execute practical exercises and verify operational evidence for processes and ps.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 48."
+    ]
+  },
+  {
+    "day_number": 49,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Fundamentals",
+    "topic": "Day 49 \u2014 Linux Troubleshooting Assessment",
+    "description": "Hands-on troubleshooting: resolve broken permissions, missing groups, and orphaned processes.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Linux troubleshooting assessment.",
+      "Execute practical exercises and verify operational evidence for Linux troubleshooting assessment.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 49."
+    ]
+  },
+  {
+    "day_number": 50,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 50 \u2014 Services And Systemd",
+    "description": "Systemd initialization system, unit files, targets, and daemon architecture.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of services and systemd.",
+      "Execute practical exercises and verify operational evidence for services and systemd.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 50."
+    ]
+  },
+  {
+    "day_number": 51,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 51 \u2014 Systemctl",
+    "description": "Managing service lifecycles (start, stop, enable, disable, status, mask).",
+    "estimated_hours": 3.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of systemctl.",
+      "Execute practical exercises and verify operational evidence for systemctl.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 51."
+    ]
+  },
+  {
+    "day_number": 52,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 52 \u2014 Journalctl And Logs",
+    "description": "Querying systemd journal logs, /var/log analysis, priority filtering, and log rotation.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of journalctl and logs.",
+      "Execute practical exercises and verify operational evidence for journalctl and logs.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 52."
+    ]
+  },
+  {
+    "day_number": 53,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 53 \u2014 Ssh",
+    "description": "Secure Shell server configuration, key pair generation, authorized_keys, and agent forwarding.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of SSH.",
+      "Execute practical exercises and verify operational evidence for SSH.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 53."
+    ]
+  },
+  {
+    "day_number": 54,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 54 \u2014 Cron",
+    "description": "Scheduled tasks with crontab, system cron directories, and syntax troubleshooting.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of cron.",
+      "Execute practical exercises and verify operational evidence for cron.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 54."
+    ]
+  },
+  {
+    "day_number": 55,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 55 \u2014 Environment Variables And Shell",
+    "description": "PATH evaluation, export variables, shell configuration files (.bashrc, /etc/profile).",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of environment variables and shell.",
+      "Execute practical exercises and verify operational evidence for environment variables and shell.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 55."
+    ]
+  },
+  {
+    "day_number": 56,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Administration",
+    "topic": "Day 56 \u2014 Shell Scripting Mini-Project",
+    "description": "Write an automated system health check and log backup bash script.",
+    "estimated_hours": 4.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of shell scripting mini-project.",
+      "Execute practical exercises and verify operational evidence for shell scripting mini-project.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 56."
+    ]
+  },
+  {
+    "day_number": 57,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 57 \u2014 Package Management",
+    "description": "Debian (apt) and RedHat (dnf/rpm) package managers, repositories, and dependency trees.",
+    "estimated_hours": 3.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of package management.",
+      "Execute practical exercises and verify operational evidence for package management.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 57."
+    ]
+  },
+  {
+    "day_number": 58,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 58 \u2014 /Proc",
+    "description": "Virtual filesystem representing kernel state, hardware devices, and per-PID process metrics.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of /proc.",
+      "Execute practical exercises and verify operational evidence for /proc.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 58."
+    ]
+  },
+  {
+    "day_number": 59,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 59 \u2014 /Sys",
+    "description": "Kernel device model, driver parameters, subsystem configuration, and sysfs exploration.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of /sys.",
+      "Execute practical exercises and verify operational evidence for /sys.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 59."
+    ]
+  },
+  {
+    "day_number": 60,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 60 \u2014 Capabilities",
+    "description": "Privilege splitting with Linux capabilities (CAP_NET_BIND_SERVICE, CAP_SYS_ADMIN).",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of capabilities.",
+      "Execute practical exercises and verify operational evidence for capabilities.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 60."
+    ]
+  },
+  {
+    "day_number": 61,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 61 \u2014 Namespaces",
+    "description": "Isolation primitives (PID, NET, MNT, IPC, UTS) forming containerization foundations.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of namespaces.",
+      "Execute practical exercises and verify operational evidence for namespaces.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 61."
+    ]
+  },
+  {
+    "day_number": 62,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 62 \u2014 Strace",
+    "description": "Intercepting and recording system calls invoked by binaries during execution.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of strace.",
+      "Execute practical exercises and verify operational evidence for strace.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 62."
+    ]
+  },
+  {
+    "day_number": 63,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Internals",
+    "topic": "Day 63 \u2014 Troubleshoot A Deliberately Broken Linux Service",
+    "description": "Diagnose and repair a damaged web server service using system logs and strace.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of troubleshoot a deliberately broken Linux service.",
+      "Execute practical exercises and verify operational evidence for troubleshoot a deliberately broken Linux service.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 63."
+    ]
+  },
+  {
+    "day_number": 64,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 64 \u2014 Linux Authentication",
+    "description": "Pluggable Authentication Modules (PAM), /etc/pam.d/ configurations, and shadow security.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Linux authentication.",
+      "Execute practical exercises and verify operational evidence for Linux authentication.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 64."
+    ]
+  },
+  {
+    "day_number": 65,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 65 \u2014 Ssh Hardening Concepts",
+    "description": "Disabling root login, enforcing key authentication, port changing, and fail2ban integration.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of SSH hardening concepts.",
+      "Execute practical exercises and verify operational evidence for SSH hardening concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 65."
+    ]
+  },
+  {
+    "day_number": 66,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 66 \u2014 Permissions And Privilege Boundaries",
+    "description": "Evaluating sudoers configuration, wheel group, and sudo command restrictions.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of permissions and privilege boundaries.",
+      "Execute practical exercises and verify operational evidence for permissions and privilege boundaries.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 66."
+    ]
+  },
+  {
+    "day_number": 67,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 67 \u2014 Service Exposure",
+    "description": "Auditing network listening ports and bounding services to local loopback addresses.",
+    "estimated_hours": 3.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of service exposure.",
+      "Execute practical exercises and verify operational evidence for service exposure.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 67."
+    ]
+  },
+  {
+    "day_number": 68,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 68 \u2014 Logs And Indicators",
+    "description": "Parsing auth.log and secure logs for brute-force attempts and anomalous logins.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of logs and indicators.",
+      "Execute practical exercises and verify operational evidence for logs and indicators.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 68."
+    ]
+  },
+  {
+    "day_number": 69,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 69 \u2014 Linux Attack Surface Mapping",
+    "description": "Comprehensive enumeration of installed packages, SUID binaries, and writable paths.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Linux attack surface mapping.",
+      "Execute practical exercises and verify operational evidence for Linux attack surface mapping.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 69."
+    ]
+  },
+  {
+    "day_number": 70,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Linux",
+    "domain": "Linux Security",
+    "topic": "Day 70 \u2014 Teach Linux Security To A Beginner",
+    "description": "Deliver a structured pedagogical walkthrough of Linux security hardening.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of teach Linux security to a beginner.",
+      "Execute practical exercises and verify operational evidence for teach Linux security to a beginner.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 70."
+    ]
+  },
+  {
+    "day_number": 71,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 71 \u2014 Windows Architecture",
+    "description": "User mode, kernel mode, HAL, executive subsystems, and Win32 API structure.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows architecture.",
+      "Execute practical exercises and verify operational evidence for Windows architecture.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 71."
+    ]
+  },
+  {
+    "day_number": 72,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 72 \u2014 Processes",
+    "description": "Windows processes, threads, handles, DLL loading, and token models.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of processes.",
+      "Execute practical exercises and verify operational evidence for processes.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 72."
+    ]
+  },
+  {
+    "day_number": 73,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 73 \u2014 Services",
+    "description": "Service Control Manager (SCM), service accounts (SYSTEM, Network Service), and startup types.",
+    "estimated_hours": 3.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of services.",
+      "Execute practical exercises and verify operational evidence for services.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 73."
+    ]
+  },
+  {
+    "day_number": 74,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 74 \u2014 Registry",
+    "description": "HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, hive structure, and registry navigation.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Registry.",
+      "Execute practical exercises and verify operational evidence for Registry.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 74."
+    ]
+  },
+  {
+    "day_number": 75,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 75 \u2014 Event Viewer",
+    "description": "Windows event log architecture (Application, Security, System) and Event ID semantics.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Event Viewer.",
+      "Execute practical exercises and verify operational evidence for Event Viewer.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 75."
+    ]
+  },
+  {
+    "day_number": 76,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 76 \u2014 Powershell",
+    "description": "Commandlets, object-oriented pipelines, scripting basics, and system administration queries.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of PowerShell.",
+      "Execute practical exercises and verify operational evidence for PowerShell.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 76."
+    ]
+  },
+  {
+    "day_number": 77,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Foundations",
+    "topic": "Day 77 \u2014 Windows Troubleshooting Assessment",
+    "description": "Hands-on diagnostic scenario: resolve corrupted registry keys and failing services.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows troubleshooting assessment.",
+      "Execute practical exercises and verify operational evidence for Windows troubleshooting assessment.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 77."
+    ]
+  },
+  {
+    "day_number": 78,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 78 \u2014 Ntfs Permissions",
+    "description": "NTFS file system security, standard and special permissions, and inheritance rules.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of NTFS permissions.",
+      "Execute practical exercises and verify operational evidence for NTFS permissions.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 78."
+    ]
+  },
+  {
+    "day_number": 79,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 79 \u2014 Acls",
+    "description": "Discretionary Access Control Lists (DACLs) vs System Access Control Lists (SACLs).",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of ACLs.",
+      "Execute practical exercises and verify operational evidence for ACLs.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 79."
+    ]
+  },
+  {
+    "day_number": 80,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 80 \u2014 Windows Authentication",
+    "description": "Security Support Provider Interface (SSPI), NTLM challenge-response, and Kerberos overview.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows authentication.",
+      "Execute practical exercises and verify operational evidence for Windows authentication.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 80."
+    ]
+  },
+  {
+    "day_number": 81,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 81 \u2014 Windows Security Model",
+    "description": "Security Identifiers (SIDs), access tokens, integrity levels, and User Account Control (UAC).",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows security model.",
+      "Execute practical exercises and verify operational evidence for Windows security model.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 81."
+    ]
+  },
+  {
+    "day_number": 82,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 82 \u2014 Windows Networking",
+    "description": "SMB/CIFS protocols, Windows Firewall rules, RPC endpoints, and NetBIOS resolution.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows networking.",
+      "Execute practical exercises and verify operational evidence for Windows networking.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 82."
+    ]
+  },
+  {
+    "day_number": 83,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 83 \u2014 Sysinternals",
+    "description": "Tooling mastery: Process Explorer, Process Monitor (Procmon), and Autoruns investigation.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Sysinternals.",
+      "Execute practical exercises and verify operational evidence for Sysinternals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 83."
+    ]
+  },
+  {
+    "day_number": 84,
+    "phase": "Phase 1: Foundations & Core Systems",
+    "skill_layer": "Windows",
+    "domain": "Windows Security",
+    "topic": "Day 84 \u2014 Windows Security Investigation Lab",
+    "description": "Investigate a simulated credential exposure and unauthorized persistence in a lab.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Windows security investigation lab.",
+      "Execute practical exercises and verify operational evidence for Windows security investigation lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 84."
+    ]
+  },
+  {
+    "day_number": 85,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 85 \u2014 Reconnaissance",
+    "description": "Passive reconnaissance, OSINT techniques, DNS harvesting, and corporate footprinting.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of reconnaissance.",
+      "Execute practical exercises and verify operational evidence for reconnaissance.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 85."
+    ]
+  },
+  {
+    "day_number": 86,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 86 \u2014 Enumeration",
+    "description": "Active network enumeration, service fingerprinting, and account discovery protocols.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of enumeration.",
+      "Execute practical exercises and verify operational evidence for enumeration.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 86."
+    ]
+  },
+  {
+    "day_number": 87,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 87 \u2014 Attack-Surface Identification",
+    "description": "Mapping entry points, exposed web portals, unpatched protocols, and trust relationships.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of attack-surface identification.",
+      "Execute practical exercises and verify operational evidence for attack-surface identification.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 87."
+    ]
+  },
+  {
+    "day_number": 88,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 88 \u2014 Vulnerability Discovery",
+    "description": "Correlating version information with CVE databases and automated vulnerability scanners.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of vulnerability discovery.",
+      "Execute practical exercises and verify operational evidence for vulnerability discovery.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 88."
+    ]
+  },
+  {
+    "day_number": 89,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 89 \u2014 Validation",
+    "description": "Manual verification of scanner findings to eliminate false positives in isolated labs.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of validation.",
+      "Execute practical exercises and verify operational evidence for validation.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 89."
+    ]
+  },
+  {
+    "day_number": 90,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 90 \u2014 Evidence Collection And Reporting",
+    "description": "Technical note taking, screenshot evidence standards, CVSS scoring, and risk metrics.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of evidence collection and reporting.",
+      "Execute practical exercises and verify operational evidence for evidence collection and reporting.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 90."
+    ]
+  },
+  {
+    "day_number": 91,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Penetration-Testing Methodology",
+    "topic": "Day 91 \u2014 Produce An End-To-End Authorized Assessment Plan",
+    "description": "Draft a complete Rules of Engagement (RoE) and technical penetration test scope.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of produce an end-to-end authorized assessment plan.",
+      "Execute practical exercises and verify operational evidence for produce an end-to-end authorized assessment plan.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 91."
+    ]
+  },
+  {
+    "day_number": 92,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 92 \u2014 Smb",
+    "description": "Server Message Block enumeration, null sessions, share permissions, and common vulnerabilities.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of SMB.",
+      "Execute practical exercises and verify operational evidence for SMB.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 92."
+    ]
+  },
+  {
+    "day_number": 93,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 93 \u2014 Ssh",
+    "description": "SSH configuration audits, weak key exchange algorithms, and credential spray testing.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of SSH.",
+      "Execute practical exercises and verify operational evidence for SSH.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 93."
+    ]
+  },
+  {
+    "day_number": 94,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 94 \u2014 Ftp",
+    "description": "Anonymous FTP access, cleartext credential risks, and directory traversal testing.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of FTP.",
+      "Execute practical exercises and verify operational evidence for FTP.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 94."
+    ]
+  },
+  {
+    "day_number": 95,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 95 \u2014 Http Service Enumeration",
+    "description": "Directory and file brute-forcing, robots.txt inspection, and web technology identification.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of HTTP service enumeration.",
+      "Execute practical exercises and verify operational evidence for HTTP service enumeration.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 95."
+    ]
+  },
+  {
+    "day_number": 96,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 96 \u2014 Dns Enumeration Concepts",
+    "description": "Zone transfers (AXFR), sub-domain brute forcing, and reverse lookup records.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of DNS enumeration concepts.",
+      "Execute practical exercises and verify operational evidence for DNS enumeration concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 96."
+    ]
+  },
+  {
+    "day_number": 97,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 97 \u2014 Common Misconfigurations",
+    "description": "Default credentials, unnecessary services, permissive file shares, and wildcard sudo rules.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of common misconfigurations.",
+      "Execute practical exercises and verify operational evidence for common misconfigurations.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 97."
+    ]
+  },
+  {
+    "day_number": 98,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Network Penetration Testing",
+    "topic": "Day 98 \u2014 Privilege-Escalation Fundamentals In An Isolated Lab",
+    "description": "Identifying local privilege escalation vectors on an authorized test machine.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of privilege-escalation fundamentals in an isolated lab.",
+      "Execute practical exercises and verify operational evidence for privilege-escalation fundamentals in an isolated lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 98."
+    ]
+  },
+  {
+    "day_number": 99,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 99 \u2014 Exploitation Concepts",
+    "description": "Proof of concept execution, payload staging, shell types (bind vs reverse), and listener setup.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of exploitation concepts.",
+      "Execute practical exercises and verify operational evidence for exploitation concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 99."
+    ]
+  },
+  {
+    "day_number": 100,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 100 \u2014 Post-Exploitation Concepts",
+    "description": "System situational awareness, credential hunting in memory/files, and sensitive data indexing.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of post-exploitation concepts.",
+      "Execute practical exercises and verify operational evidence for post-exploitation concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 100."
+    ]
+  },
+  {
+    "day_number": 101,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 101 \u2014 Persistence Concepts",
+    "description": "Scheduled tasks, cron jobs, service creation, and startup registry keys in test systems.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of persistence concepts.",
+      "Execute practical exercises and verify operational evidence for persistence concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 101."
+    ]
+  },
+  {
+    "day_number": 102,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 102 \u2014 Lateral Movement Concepts",
+    "description": "Pivoting, port forwarding, SSH tunneling, and proxychains configuration.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of lateral movement concepts.",
+      "Execute practical exercises and verify operational evidence for lateral movement concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 102."
+    ]
+  },
+  {
+    "day_number": 103,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 103 \u2014 Evidence Handling",
+    "description": "Secure storage of assessment findings, hash integrity verification, and cleanup verification.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of evidence handling.",
+      "Execute practical exercises and verify operational evidence for evidence handling.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 103."
+    ]
+  },
+  {
+    "day_number": 104,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 104 \u2014 Remediation Mapping",
+    "description": "Translating exploitation vectors into defense-in-depth mitigation roadmaps.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of remediation mapping.",
+      "Execute practical exercises and verify operational evidence for remediation mapping.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 104."
+    ]
+  },
+  {
+    "day_number": 105,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Offensive Security",
+    "domain": "Exploitation Lifecycle",
+    "topic": "Day 105 \u2014 Complete A Controlled Penetration-Testing Lab And Report",
+    "description": "Execute full assessment on an authorized target and author an executive report.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of complete a controlled penetration-testing lab and report.",
+      "Execute practical exercises and verify operational evidence for complete a controlled penetration-testing lab and report.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 105."
+    ]
+  },
+  {
+    "day_number": 106,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 106 \u2014 Http Request/Response",
+    "description": "HTTP methods, headers, status codes, keep-alive connections, and raw request parsing.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of HTTP request/response.",
+      "Execute practical exercises and verify operational evidence for HTTP request/response.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 106."
+    ]
+  },
+  {
+    "day_number": 107,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 107 \u2014 Cookies",
+    "description": "Session cookies, flags (HttpOnly, Secure, SameSite), and cookie security implications.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of cookies.",
+      "Execute practical exercises and verify operational evidence for cookies.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 107."
+    ]
+  },
+  {
+    "day_number": 108,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 108 \u2014 Sessions",
+    "description": "State management, session identifiers, server-side session stores, and fixation risks.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of sessions.",
+      "Execute practical exercises and verify operational evidence for sessions.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 108."
+    ]
+  },
+  {
+    "day_number": 109,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 109 \u2014 Authentication",
+    "description": "Basic auth, form-based auth, multi-factor authentication, and password storage standards.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of authentication.",
+      "Execute practical exercises and verify operational evidence for authentication.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 109."
+    ]
+  },
+  {
+    "day_number": 110,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 110 \u2014 Authorization",
+    "description": "Role-based access control (RBAC), permission matrices, and privilege enforcement points.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of authorization.",
+      "Execute practical exercises and verify operational evidence for authorization.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 110."
+    ]
+  },
+  {
+    "day_number": 111,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 111 \u2014 Apis",
+    "description": "REST architecture, endpoints, JSON schemas, API keys, and rate limiting fundamentals.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of APIs.",
+      "Execute practical exercises and verify operational evidence for APIs.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 111."
+    ]
+  },
+  {
+    "day_number": 112,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Fundamentals",
+    "topic": "Day 112 \u2014 Jwt And Token-Based Authentication",
+    "description": "JSON Web Tokens: header, payload, signature, hashing algorithms, and validation flaws.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of JWT and token-based authentication.",
+      "Execute practical exercises and verify operational evidence for JWT and token-based authentication.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 112."
+    ]
+  },
+  {
+    "day_number": 113,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 113 \u2014 Cors",
+    "description": "Cross-Origin Resource Sharing, preflight OPTIONS requests, origin reflection risks.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of CORS.",
+      "Execute practical exercises and verify operational evidence for CORS.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 113."
+    ]
+  },
+  {
+    "day_number": 114,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 114 \u2014 Sql Injection Concepts And Safe Lab Validation",
+    "description": "In-band SQLi, union-based extraction, error-based testing in safe sandboxed databases.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of SQL injection concepts and safe lab validation.",
+      "Execute practical exercises and verify operational evidence for SQL injection concepts and safe lab validation.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 114."
+    ]
+  },
+  {
+    "day_number": 115,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 115 \u2014 Xss",
+    "description": "Cross-Site Scripting: Reflected, Stored, and DOM-based XSS mechanisms and context encoding.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of XSS.",
+      "Execute practical exercises and verify operational evidence for XSS.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 115."
+    ]
+  },
+  {
+    "day_number": 116,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 116 \u2014 Csrf",
+    "description": "Cross-Site Request Forgery, state-changing requests, anti-CSRF tokens, and SameSite protection.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of CSRF.",
+      "Execute practical exercises and verify operational evidence for CSRF.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 116."
+    ]
+  },
+  {
+    "day_number": 117,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 117 \u2014 Ssrf",
+    "description": "Server-Side Request Forgery, cloud metadata service probing, and internal network scanning.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of SSRF.",
+      "Execute practical exercises and verify operational evidence for SSRF.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 117."
+    ]
+  },
+  {
+    "day_number": 118,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 118 \u2014 Path Traversal",
+    "description": "Directory traversal (dot-dot-slash), arbitrary file disclosure, and path canonicalization.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of path traversal.",
+      "Execute practical exercises and verify operational evidence for path traversal.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 118."
+    ]
+  },
+  {
+    "day_number": 119,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities I",
+    "topic": "Day 119 \u2014 Vulnerable-Web-App Lab And Evidence Report",
+    "description": "Hands-on audit of a test application; document technical findings and CVSS scores.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of vulnerable-web-app lab and evidence report.",
+      "Execute practical exercises and verify operational evidence for vulnerable-web-app lab and evidence report.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 119."
+    ]
+  },
+  {
+    "day_number": 120,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 120 \u2014 Idor/Bola",
+    "description": "Insecure Direct Object References and Broken Object Level Authorization testing.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of IDOR/BOLA.",
+      "Execute practical exercises and verify operational evidence for IDOR/BOLA.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 120."
+    ]
+  },
+  {
+    "day_number": 121,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 121 \u2014 File-Upload Vulnerabilities",
+    "description": "Unrestricted file uploads, MIME-type validation bypasses, and executable payloads.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of file-upload vulnerabilities.",
+      "Execute practical exercises and verify operational evidence for file-upload vulnerabilities.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 121."
+    ]
+  },
+  {
+    "day_number": 122,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 122 \u2014 Command Injection Concepts",
+    "description": "Executing arbitrary OS commands via vulnerable backend inputs and sanitization bypasses.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of command injection concepts.",
+      "Execute practical exercises and verify operational evidence for command injection concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 122."
+    ]
+  },
+  {
+    "day_number": 123,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 123 \u2014 Authentication Flaws",
+    "description": "Password reset vulnerabilities, brute-force bypasses, and credential stuffing vectors.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of authentication flaws.",
+      "Execute practical exercises and verify operational evidence for authentication flaws.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 123."
+    ]
+  },
+  {
+    "day_number": 124,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 124 \u2014 Business-Logic Vulnerabilities",
+    "description": "Circumventing application workflows, shopping cart manipulation, and race conditions.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of business-logic vulnerabilities.",
+      "Execute practical exercises and verify operational evidence for business-logic vulnerabilities.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 124."
+    ]
+  },
+  {
+    "day_number": 125,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 125 \u2014 Burp Suite Workflow",
+    "description": "Intercepting proxy, repeater, intruder rate limiting, and target site mapping.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Burp Suite workflow.",
+      "Execute practical exercises and verify operational evidence for Burp Suite workflow.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 125."
+    ]
+  },
+  {
+    "day_number": 126,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Web and Application Security",
+    "domain": "Web Vulnerabilities II",
+    "topic": "Day 126 \u2014 Complete An Owasp-Style Web Assessment In An Isolated Lab",
+    "description": "Full-scale web application penetration test covering OWASP Top 10 vulnerabilities.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of complete an OWASP-style web assessment in an isolated lab.",
+      "Execute practical exercises and verify operational evidence for complete an OWASP-style web assessment in an isolated lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 126."
+    ]
+  },
+  {
+    "day_number": 127,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 127 \u2014 Windows Domains",
+    "description": "Domain controllers, central identity management, domain trees, and forest architectures.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows domains.",
+      "Execute practical exercises and verify operational evidence for Windows domains.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 127."
+    ]
+  },
+  {
+    "day_number": 128,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 128 \u2014 Active Directory Architecture",
+    "description": "AD DS, Schema, global catalog, organizational units (OUs), and replication.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Active Directory architecture.",
+      "Execute practical exercises and verify operational evidence for Active Directory architecture.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 128."
+    ]
+  },
+  {
+    "day_number": 129,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 129 \u2014 Ldap",
+    "description": "Lightweight Directory Access Protocol, queries, search filters, and directory querying.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of LDAP.",
+      "Execute practical exercises and verify operational evidence for LDAP.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 129."
+    ]
+  },
+  {
+    "day_number": 130,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 130 \u2014 Kerberos Fundamentals",
+    "description": "Authentication tickets, Key Distribution Center (KDC), AS-REQ, AS-REP, TGS-REQ, TGS-REP.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Kerberos fundamentals.",
+      "Execute practical exercises and verify operational evidence for Kerberos fundamentals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 130."
+    ]
+  },
+  {
+    "day_number": 131,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 131 \u2014 Authentication Flows",
+    "description": "Step-by-step trace of Kerberos authentication vs NTLM fallbacks.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of authentication flows.",
+      "Execute practical exercises and verify operational evidence for authentication flows.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 131."
+    ]
+  },
+  {
+    "day_number": 132,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 132 \u2014 Group Policy",
+    "description": "GPO processing, Group Policy Objects, organizational enforcement, and security templates.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Group Policy.",
+      "Execute practical exercises and verify operational evidence for Group Policy.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 132."
+    ]
+  },
+  {
+    "day_number": 133,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Security Foundations",
+    "topic": "Day 133 \u2014 Build And Document A Small Authorized Ad Lab",
+    "description": "Set up a virtualized domain controller and join client workstations for security testing.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of build and document a small authorized AD lab.",
+      "Execute practical exercises and verify operational evidence for build and document a small authorized AD lab.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 133."
+    ]
+  },
+  {
+    "day_number": 134,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 134 \u2014 Ad Attack Surface",
+    "description": "Domain enumeration, BloodHound graph analysis concepts, and privileged group auditing.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of AD attack surface.",
+      "Execute practical exercises and verify operational evidence for AD attack surface.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 134."
+    ]
+  },
+  {
+    "day_number": 135,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 135 \u2014 Credential Concepts",
+    "description": "LSASS memory handling, password hashes, Kerberoasting theory, and AS-REP roasting.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of credential concepts.",
+      "Execute practical exercises and verify operational evidence for credential concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 135."
+    ]
+  },
+  {
+    "day_number": 136,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 136 \u2014 Lateral Movement Concepts",
+    "description": "PsExec, WMI/WinRM remote execution, and overpass-the-hash fundamentals.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of lateral movement concepts.",
+      "Execute practical exercises and verify operational evidence for lateral movement concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 136."
+    ]
+  },
+  {
+    "day_number": 137,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 137 \u2014 Privilege Escalation Concepts",
+    "description": "Domain escalation vectors, vulnerable GPOs, ACL misconfigurations, and service abuse.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of privilege escalation concepts.",
+      "Execute practical exercises and verify operational evidence for privilege escalation concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 137."
+    ]
+  },
+  {
+    "day_number": 138,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 138 \u2014 Enterprise Logging",
+    "description": "Windows Event IDs for AD audits (4624, 4625, 4672, 4768, 4769, 4771) and PowerShell script block logging.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of enterprise logging.",
+      "Execute practical exercises and verify operational evidence for enterprise logging.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 138."
+    ]
+  },
+  {
+    "day_number": 139,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 139 \u2014 Detection Opportunities",
+    "description": "Identifying abnormal ticket requests, anomalous Kerberos encryption types, and mass enumeration.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of detection opportunities.",
+      "Execute practical exercises and verify operational evidence for detection opportunities.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 139."
+    ]
+  },
+  {
+    "day_number": 140,
+    "phase": "Phase 2: Security & Exploitation",
+    "skill_layer": "Enterprise Security",
+    "domain": "Enterprise Attack and Defense",
+    "topic": "Day 140 \u2014 Attack-To-Detection Exercise",
+    "description": "Execute a controlled Kerberoasting demonstration and analyze the resulting domain event logs.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of attack-to-detection exercise.",
+      "Execute practical exercises and verify operational evidence for attack-to-detection exercise.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 140."
+    ]
+  },
+  {
+    "day_number": 141,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 141 \u2014 Soc Purpose And Workflow",
+    "description": "Security Operations Center tier roles (Tier 1-3), incident response lifecycles, and SLAs.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of SOC purpose and workflow.",
+      "Execute practical exercises and verify operational evidence for SOC purpose and workflow.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 141."
+    ]
+  },
+  {
+    "day_number": 142,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 142 \u2014 Logs Vs Events Vs Alerts",
+    "description": "Log ingestion volumes, event correlation rules, and alert threshold calibration.",
+    "estimated_hours": 3.0,
+    "difficulty": "beginner",
+    "objectives": [
+      "Master core conceptual foundations of logs vs events vs alerts.",
+      "Execute practical exercises and verify operational evidence for logs vs events vs alerts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 142."
+    ]
+  },
+  {
+    "day_number": 143,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 143 \u2014 Windows Event Logs",
+    "description": "In-depth parsing of security auditing events, Sysmon installation, and telemetry enrichment.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Windows Event Logs.",
+      "Execute practical exercises and verify operational evidence for Windows Event Logs.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 143."
+    ]
+  },
+  {
+    "day_number": 144,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 144 \u2014 Linux Logs",
+    "description": "Analyzing /var/log/auth.log, auditd system audit logs, and web server access logs.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Linux logs.",
+      "Execute practical exercises and verify operational evidence for Linux logs.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 144."
+    ]
+  },
+  {
+    "day_number": 145,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 145 \u2014 Ioc Concepts",
+    "description": "Indicators of Compromise: file hashes, IP addresses, domains, and YARA rule basics.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of IOC concepts.",
+      "Execute practical exercises and verify operational evidence for IOC concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 145."
+    ]
+  },
+  {
+    "day_number": 146,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 146 \u2014 Alert Triage",
+    "description": "Triaging simulated alerts, determining true vs false positives, and scoping incident impact.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of alert triage.",
+      "Execute practical exercises and verify operational evidence for alert triage.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 146."
+    ]
+  },
+  {
+    "day_number": 147,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SOC Fundamentals",
+    "topic": "Day 147 \u2014 Investigate A Simulated Alert",
+    "description": "End-to-end investigation of a malicious macro phishing alert in a sandbox SIEM.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of investigate a simulated alert.",
+      "Execute practical exercises and verify operational evidence for investigate a simulated alert.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 147."
+    ]
+  },
+  {
+    "day_number": 148,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 148 \u2014 Siem Architecture",
+    "description": "Log forwarders, parsers, indexers, storage retention, and correlation engines.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of SIEM architecture.",
+      "Execute practical exercises and verify operational evidence for SIEM architecture.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 148."
+    ]
+  },
+  {
+    "day_number": 149,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 149 \u2014 Wazuh",
+    "description": "Open source XDR and SIEM: agent deployment, rule customization, and active response testing.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Wazuh.",
+      "Execute practical exercises and verify operational evidence for Wazuh.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 149."
+    ]
+  },
+  {
+    "day_number": 150,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 150 \u2014 Elastic",
+    "description": "Elasticsearch, Logstash, Kibana (ELK) stack and Lucene query language fundamentals.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Elastic.",
+      "Execute practical exercises and verify operational evidence for Elastic.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 150."
+    ]
+  },
+  {
+    "day_number": 151,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 151 \u2014 Splunk Concepts",
+    "description": "Search Processing Language (SPL), dashboards, indexes, and sourcetype configuration.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of Splunk concepts.",
+      "Execute practical exercises and verify operational evidence for Splunk concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 151."
+    ]
+  },
+  {
+    "day_number": 152,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 152 \u2014 Network Monitoring",
+    "description": "Full packet capture systems, network security monitoring (NSM) architectures.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of network monitoring.",
+      "Execute practical exercises and verify operational evidence for network monitoring.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 152."
+    ]
+  },
+  {
+    "day_number": 153,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 153 \u2014 Zeek",
+    "description": "Bro/Zeek network analysis framework: conn.log, dns.log, and HTTP transaction auditing.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Zeek.",
+      "Execute practical exercises and verify operational evidence for Zeek.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 153."
+    ]
+  },
+  {
+    "day_number": 154,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "SIEM and Monitoring",
+    "topic": "Day 154 \u2014 Suricata",
+    "description": "Suricata signature rules, fast.log, EVE JSON logging, and alert signature matching.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Suricata.",
+      "Execute practical exercises and verify operational evidence for Suricata.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 154."
+    ]
+  },
+  {
+    "day_number": 155,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 155 \u2014 Attack Artifacts",
+    "description": "File modifications, registry keys, process hollowing indicators, and network artifacts.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of attack artifacts.",
+      "Execute practical exercises and verify operational evidence for attack artifacts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 155."
+    ]
+  },
+  {
+    "day_number": 156,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 156 \u2014 Detection Logic",
+    "description": "Translating adversary techniques (MITRE ATT&CK) into precise detection rules.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of detection logic.",
+      "Execute practical exercises and verify operational evidence for detection logic.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 156."
+    ]
+  },
+  {
+    "day_number": 157,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 157 \u2014 Investigation Workflow",
+    "description": "Evidence preservation, timeline construction, volatile memory capture, and triage.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of investigation workflow.",
+      "Execute practical exercises and verify operational evidence for investigation workflow.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 157."
+    ]
+  },
+  {
+    "day_number": 158,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 158 \u2014 Containment",
+    "description": "Host isolation, credential resets, firewall blocking, and malicious process termination.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of containment.",
+      "Execute practical exercises and verify operational evidence for containment.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 158."
+    ]
+  },
+  {
+    "day_number": 159,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 159 \u2014 Remediation",
+    "description": "System eradication, persistence cleanup, root-cause closure, and verification scans.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of remediation.",
+      "Execute practical exercises and verify operational evidence for remediation.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 159."
+    ]
+  },
+  {
+    "day_number": 160,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 160 \u2014 Threat Intelligence",
+    "description": "Integrating STIX/TAXII threat feeds, MISP platforms, and adversary profiling.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of threat intelligence.",
+      "Execute practical exercises and verify operational evidence for threat intelligence.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 160."
+    ]
+  },
+  {
+    "day_number": 161,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "SOC and Defensive Security",
+    "domain": "Detection Engineering",
+    "topic": "Day 161 \u2014 Build One Complete Attack \u2192 Artifact \u2192 Log \u2192 Detection \u2192 Investigation \u2192 Containment \u2192 Remediation Case",
+    "description": "Execute full 7-step defensive reasoning case study and publish comprehensive incident writeup.",
+    "estimated_hours": 5.5,
+    "difficulty": "expert",
+    "objectives": [
+      "Master core conceptual foundations of build one complete ATTACK \u2192 ARTIFACT \u2192 LOG \u2192 DETECTION \u2192 INVESTIGATION \u2192 CONTAINMENT \u2192 REMEDIATION case.",
+      "Execute practical exercises and verify operational evidence for build one complete ATTACK \u2192 ARTIFACT \u2192 LOG \u2192 DETECTION \u2192 INVESTIGATION \u2192 CONTAINMENT \u2192 REMEDIATION case.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 161."
+    ]
+  },
+  {
+    "day_number": 162,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 162 \u2014 Pe Files",
+    "description": "Portable Executable structure: DOS header, PE header, optional header, and sections (.text, .data).",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of PE files.",
+      "Execute practical exercises and verify operational evidence for PE files.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 162."
+    ]
+  },
+  {
+    "day_number": 163,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 163 \u2014 Elf Files",
+    "description": "Executable and Linkable Format structure on Linux: ELF header, program headers, sections.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of ELF files.",
+      "Execute practical exercises and verify operational evidence for ELF files.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 163."
+    ]
+  },
+  {
+    "day_number": 164,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 164 \u2014 Processes And Memory",
+    "description": "Virtual memory layouts, stack vs heap allocations, address space layout (ASLR).",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of processes and memory.",
+      "Execute practical exercises and verify operational evidence for processes and memory.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 164."
+    ]
+  },
+  {
+    "day_number": 165,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 165 \u2014 Dlls/Shared Libraries",
+    "description": "Dynamic link libraries, import address tables (IAT), export tables, and DLL loading.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of DLLs/shared libraries.",
+      "Execute practical exercises and verify operational evidence for DLLs/shared libraries.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 165."
+    ]
+  },
+  {
+    "day_number": 166,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 166 \u2014 Windows Apis",
+    "description": "Common Win32 APIs targeted by malware (VirtualAlloc, CreateRemoteThread, WriteProcessMemory).",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Windows APIs.",
+      "Execute practical exercises and verify operational evidence for Windows APIs.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 166."
+    ]
+  },
+  {
+    "day_number": 167,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 167 \u2014 Linux Syscalls",
+    "description": "Malware interactions with ptrace, mprotect, fork, and network socket syscalls.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Linux syscalls.",
+      "Execute practical exercises and verify operational evidence for Linux syscalls.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 167."
+    ]
+  },
+  {
+    "day_number": 168,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Malware-Analysis Foundations",
+    "topic": "Day 168 \u2014 Hashes, Strings, And Metadata",
+    "description": "Cryptographic hashes (MD5, SHA256, SSDEEP), ASCII/Unicode strings extraction, and PE timestamp auditing.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of hashes, strings, and metadata.",
+      "Execute practical exercises and verify operational evidence for hashes, strings, and metadata.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 168."
+    ]
+  },
+  {
+    "day_number": 169,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 169 \u2014 Static Analysis Workflow",
+    "description": "Safe sample intake, hashing, obfuscation checks, entropy calculation, and unpackers.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of static analysis workflow.",
+      "Execute practical exercises and verify operational evidence for static analysis workflow.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 169."
+    ]
+  },
+  {
+    "day_number": 170,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 170 \u2014 Dynamic Analysis Workflow",
+    "description": "Executing samples in isolated virtual sandboxes, monitoring network and registry changes.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of dynamic analysis workflow.",
+      "Execute practical exercises and verify operational evidence for dynamic analysis workflow.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 170."
+    ]
+  },
+  {
+    "day_number": 171,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 171 \u2014 Ghidra Introduction",
+    "description": "NSA Ghidra setup: decompilation, function graphs, data type definition, and cross-references.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Ghidra introduction.",
+      "Execute practical exercises and verify operational evidence for Ghidra introduction.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 171."
+    ]
+  },
+  {
+    "day_number": 172,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 172 \u2014 X64Dbg Introduction",
+    "description": "Debugger setup: setting software/hardware breakpoints, stepping through assembly instructions.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of x64dbg introduction.",
+      "Execute practical exercises and verify operational evidence for x64dbg introduction.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 172."
+    ]
+  },
+  {
+    "day_number": 173,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 173 \u2014 Pestudio",
+    "description": "Rapid triage tool: inspecting indicators, suspicious imports, strings anomalies, and virusTotal API.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of PEStudio.",
+      "Execute practical exercises and verify operational evidence for PEStudio.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 173."
+    ]
+  },
+  {
+    "day_number": 174,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 174 \u2014 Procmon And Process Explorer",
+    "description": "Sysinternals monitoring of live malware behavior, file modifications, and child processes.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of Procmon and Process Explorer.",
+      "Execute practical exercises and verify operational evidence for Procmon and Process Explorer.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 174."
+    ]
+  },
+  {
+    "day_number": 175,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Static and Dynamic Analysis",
+    "topic": "Day 175 \u2014 Safe Malware-Analysis Lab Methodology",
+    "description": "Building isolated host-only virtualization environments with snapshot recovery.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of safe malware-analysis lab methodology.",
+      "Execute practical exercises and verify operational evidence for safe malware-analysis lab methodology.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 175."
+    ]
+  },
+  {
+    "day_number": 176,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 176 \u2014 C For Reverse Engineering",
+    "description": "Mapping high-level C control structures (loops, structs, if-else) to compiled assembly.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of C for reverse engineering.",
+      "Execute practical exercises and verify operational evidence for C for reverse engineering.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 176."
+    ]
+  },
+  {
+    "day_number": 177,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 177 \u2014 Assembly Fundamentals",
+    "description": "x86/x64 assembly instructions (MOV, PUSH, POP, CALL, JMP), registers, and stack frames.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of assembly fundamentals.",
+      "Execute practical exercises and verify operational evidence for assembly fundamentals.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 177."
+    ]
+  },
+  {
+    "day_number": 178,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 178 \u2014 Debugging Concepts",
+    "description": "Hardware vs software breakpoints, memory stepping, register inspection, and patch creation.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of debugging concepts.",
+      "Execute practical exercises and verify operational evidence for debugging concepts.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 178."
+    ]
+  },
+  {
+    "day_number": 179,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 179 \u2014 Reverse-Engineering Workflow",
+    "description": "Systematic code analysis: locating main entry point, analyzing critical functions, and bypassing checks.",
+    "estimated_hours": 5.0,
+    "difficulty": "expert",
+    "objectives": [
+      "Master core conceptual foundations of reverse-engineering workflow.",
+      "Execute practical exercises and verify operational evidence for reverse-engineering workflow.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 179."
+    ]
+  },
+  {
+    "day_number": 180,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 180 \u2014 Network Behavior Analysis With Wireshark",
+    "description": "Decoding malware C2 command-and-control beacons, DNS queries, and custom payloads.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of network behavior analysis with Wireshark.",
+      "Execute practical exercises and verify operational evidence for network behavior analysis with Wireshark.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 180."
+    ]
+  },
+  {
+    "day_number": 181,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 181 \u2014 Document Malware Behavior",
+    "description": "Creating behavioral summary reports detailing persistence, capabilities, and IOC lists.",
+    "estimated_hours": 4.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of document malware behavior.",
+      "Execute practical exercises and verify operational evidence for document malware behavior.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 181."
+    ]
+  },
+  {
+    "day_number": 182,
+    "phase": "Phase 3: Defensive Engineering & Analysis",
+    "skill_layer": "Malware Analysis & Reverse Engineering",
+    "domain": "Reverse Engineering Progression",
+    "topic": "Day 182 \u2014 Complete A Safe Sample-Analysis Report",
+    "description": "Conduct full static and dynamic analysis of a benign/crackme training binary.",
+    "estimated_hours": 5.5,
+    "difficulty": "expert",
+    "objectives": [
+      "Master core conceptual foundations of complete a safe sample-analysis report.",
+      "Execute practical exercises and verify operational evidence for complete a safe sample-analysis report.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 182."
+    ]
+  },
+  {
+    "day_number": 183,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 183 \u2014 Beginner Explanation Techniques",
+    "description": "Analogies, scaffolding, cognitive load management, and non-technical language translation.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of beginner explanation techniques.",
+      "Execute practical exercises and verify operational evidence for beginner explanation techniques.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 183."
+    ]
+  },
+  {
+    "day_number": 184,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 184 \u2014 Professional Explanation Techniques",
+    "description": "Executive summaries, technical risk articulation, and business impact translation.",
+    "estimated_hours": 3.5,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of professional explanation techniques.",
+      "Execute practical exercises and verify operational evidence for professional explanation techniques.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 184."
+    ]
+  },
+  {
+    "day_number": 185,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 185 \u2014 Live Demo Design",
+    "description": "Crafting reliable, fail-safe live demonstrations with backup recordings and clear takeaways.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of live demo design.",
+      "Execute practical exercises and verify operational evidence for live demo design.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 185."
+    ]
+  },
+  {
+    "day_number": 186,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 186 \u2014 Troubleshooting Instruction",
+    "description": "Teaching debugging methodologies: binary search debugging, hypothesis testing, and error tracing.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of troubleshooting instruction.",
+      "Execute practical exercises and verify operational evidence for troubleshooting instruction.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 186."
+    ]
+  },
+  {
+    "day_number": 187,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 187 \u2014 Lab Design",
+    "description": "Architecting reproducible, modular hands-on exercises with clear step-by-step verification points.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of lab design.",
+      "Execute practical exercises and verify operational evidence for lab design.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 187."
+    ]
+  },
+  {
+    "day_number": 188,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 188 \u2014 Quiz And Assessment Design",
+    "description": "Writing multiple-choice and scenario-based assessments with actionable diagnostic feedback.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of quiz and assessment design.",
+      "Execute practical exercises and verify operational evidence for quiz and assessment design.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 188."
+    ]
+  },
+  {
+    "day_number": 189,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Teaching Systems",
+    "topic": "Day 189 \u2014 Teach One Complete Networking/Security Lesson",
+    "description": "Record and self-evaluate a full 30-minute instructional session on a core security concept.",
+    "estimated_hours": 5.0,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of teach one complete networking/security lesson.",
+      "Execute practical exercises and verify operational evidence for teach one complete networking/security lesson.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 189."
+    ]
+  },
+  {
+    "day_number": 190,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 190 \u2014 Build A Curriculum Outline",
+    "description": "Develop a complete 4-week specialized course syllabus with objectives and prerequisites.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of build a curriculum outline.",
+      "Execute practical exercises and verify operational evidence for build a curriculum outline.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 190."
+    ]
+  },
+  {
+    "day_number": 191,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 191 \u2014 Build One Lab Manual",
+    "description": "Write a complete student-facing lab manual with architecture diagrams and solution guides.",
+    "estimated_hours": 4.5,
+    "difficulty": "advanced",
+    "objectives": [
+      "Master core conceptual foundations of build one lab manual.",
+      "Execute practical exercises and verify operational evidence for build one lab manual.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 191."
+    ]
+  },
+  {
+    "day_number": 192,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 192 \u2014 Build One Ctf Challenge",
+    "description": "Design, build, and deploy an original capture-the-flag challenge with intentional vulnerability.",
+    "estimated_hours": 5.5,
+    "difficulty": "expert",
+    "objectives": [
+      "Master core conceptual foundations of build one CTF challenge.",
+      "Execute practical exercises and verify operational evidence for build one CTF challenge.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 192."
+    ]
+  },
+  {
+    "day_number": 193,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 193 \u2014 Create Diagrams",
+    "description": "Design professional network and vulnerability flow diagrams using standard technical styling.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of create diagrams.",
+      "Execute practical exercises and verify operational evidence for create diagrams.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 193."
+    ]
+  },
+  {
+    "day_number": 194,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 194 \u2014 Create Interview Questions",
+    "description": "Compile 25 scenario-based cybersecurity technical interview questions with answer rubrics.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of create interview questions.",
+      "Execute practical exercises and verify operational evidence for create interview questions.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 194."
+    ]
+  },
+  {
+    "day_number": 195,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 195 \u2014 Create Troubleshooting Guides",
+    "description": "Author a comprehensive troubleshooting matrix for common network and operating system failures.",
+    "estimated_hours": 4.0,
+    "difficulty": "intermediate",
+    "objectives": [
+      "Master core conceptual foundations of create troubleshooting guides.",
+      "Execute practical exercises and verify operational evidence for create troubleshooting guides.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 195."
+    ]
+  },
+  {
+    "day_number": 196,
+    "phase": "Phase 4: Trainer Engineering & Portfolio",
+    "skill_layer": "Teaching and Trainer Systems",
+    "domain": "Trainer Portfolio",
+    "topic": "Day 196 \u2014 Assemble Final Cybersecurity Trainer Portfolio",
+    "description": "Compile all instructional assets, lab guides, CTF challenges, and technical writeups into a production portfolio.",
+    "estimated_hours": 6.0,
+    "difficulty": "expert",
+    "objectives": [
+      "Master core conceptual foundations of assemble final Cybersecurity Trainer Portfolio.",
+      "Execute practical exercises and verify operational evidence for assemble final Cybersecurity Trainer Portfolio.",
+      "Formulate defensive, troubleshooting, and teaching observations for Day 196."
+    ]
+  }
+]

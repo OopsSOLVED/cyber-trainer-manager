@@ -2,9 +2,9 @@
 
 ## Specification Compliance & Session-Gated Progress
 **Architecture Plan**: 25 Planned Development Sessions (Section 32)  
-**Current Milestone**: Session 5 Complete — Ready for Session 6  
+**Current Milestone**: Session 6 Complete — Ready for Session 7  
 **Date**: 2026-09-20  
-**Test Suite**: 96 Passed (0 Failures)  
+**Test Suite**: 100 Passed (0 Failures)  
 **Frontend**: TypeScript 0 errors, Vite build successful  
 
 ---
@@ -18,8 +18,9 @@
 | **3** | **Authentication** | ✅ Done | User model, bcrypt hashing, JWT auth, registration, login, auth middleware & tests |
 | **4** | **Curriculum data model** | ✅ Done | Phase, SkillLayer, Domain, Topic, LearningObjective hierarchy with eager relationships |
 | **5** | **Task engine & dependencies** | ✅ Done | Tasks, Subtasks, TaskPriority, TaskType, due dates, TaskDependency model & enforcement |
-| **6** | **Full curriculum seed** | ⏳ **NEXT** | Complete 196-day roadmap import across all 7 skill layers and 28 weeks |
-| **7** | **Today view** | 📋 Backlog | Actionable daily view, objective, evidence prompt, reflections, and completion controls |
+| **6** | **Full curriculum seed** | ✅ Done | Complete 196-day roadmap across all 28 weeks, 4 phases, 10 skill layers, 588 objectives |
+| **7** | **Today view** | ⏳ **NEXT** | Actionable daily view, objective, evidence prompt, reflections, and completion controls |
+
 | **8** | **Roadmap UI** | 📋 Backlog | Full interactive roadmap navigation, phase/domain filters, progress indicators |
 | **9** | **Study sessions** | 📋 Backlog | Timer engine (start/stop), session persistence, interruption tracking, actual study time |
 | **10** | **Competency engine** | 📋 Backlog | 6 competency levels (Unknown → Teaching-ready), progression rules, mastery tracking |
@@ -41,7 +42,25 @@
 
 ---
 
+## Completed in Session 6: Full Curriculum Seed (196 Days)
+
+- **Complete 196-Day Master Curriculum**:
+  - Authored full dataset across all 28 weeks, 4 Phases, and 10 Skill Layers matching Section 8 specifications.
+  - Every day contains structured, actionable learning objectives (588 total objectives) adhering to Section 7 guidelines (concepts to study, practical exercise, deliverable, self-assessment).
+- **Seed Files & Formats**:
+  - `backend/app/db/seeds/curriculum_data.json` (229 KB) — Full hierarchical JSON for database seeder.
+  - `curriculum/roadmap.json` (229 KB) — Roadmap hierarchy for client/system consumers.
+  - `curriculum/daily_tasks.json` (132 KB) — Flat daily task index for daily plan lookup.
+  - `backend/scripts/generate_full_curriculum.py` — Deterministic generator script.
+- **Automated Verification**:
+  - Verified 196 unique, sequential days (Days 1 to 196) with zero gaps or duplicates.
+  - Added 4 test suites in `backend/tests/test_seeder.py` verifying counts, sequential ordering, phases, and measurable objective descriptions.
+  - Total backend tests: **100 passed** (0 failures).
+
+---
+
 ## Completed in Session 5: Task Engine & Dependencies
+
 
 - **Task Models & Enums**:
   - `TaskPriority`: `low`, `medium`, `high`, `critical`
@@ -111,7 +130,9 @@ npm run dev
 ---
 
 ## Next Session Objective
-**Session 6 — Full Curriculum Seed**:
-- Import the complete 196-day master curriculum across all 28 weeks and 7 skill layers into structured seed files.
-- Ensure all 196 daily entries have actionable objectives, practical tasks, lab instructions, and deliverables.
-- Verify idempotent seeding and relational validation checks.
+**Session 7 — Today View**:
+- Build backend and frontend for today's actionable learning agenda.
+- Display daily learning objective, practical exercises, lab instructions, and evidence deliverables.
+- Add self-assessment reflections and confidence score capture.
+- Complete task controls with optimistic UI and live database synchronization.
+

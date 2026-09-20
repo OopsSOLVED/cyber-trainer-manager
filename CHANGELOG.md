@@ -4,7 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.13.0] — 2026-09-20
+
+### Added — Session 6: Full Curriculum Seed (196 Days)
+- **Master Curriculum Dataset**:
+  - Implemented the complete 196-day, 28-week curriculum mapped across 4 Phases, 10 Skill Layers, and 28 Domains directly matching Section 8 specifications.
+  - Generated 588 measurable, actionable learning objectives spanning computer foundations, networking, Linux, Windows, offensive security, web applications, Active Directory/Kerberos, SOC/SIEM, malware analysis, reverse engineering, and trainer portfolio development.
+- **Data Seed Files**:
+  - `backend/app/db/seeds/curriculum_data.json` — Hierarchical schema for database seeding (229 KB).
+  - `curriculum/roadmap.json` — Complete roadmap hierarchy (229 KB).
+  - `curriculum/daily_tasks.json` — Indexed list of all 196 days with objectives and difficulty ratings (132 KB).
+  - `backend/scripts/generate_full_curriculum.py` — Deterministic seed generator.
+- **Tests**:
+  - Added 4 validation tests in `test_seeder.py` verifying exact 196 days, sequential ordering (1-196), phase composition, and objective completeness (100 backend tests total passing).
+
+---
+
 ## [0.12.0] — 2026-09-20
+
 
 ### Added — Session 5: Task Engine & Dependencies Realignment
 - **Models**:
