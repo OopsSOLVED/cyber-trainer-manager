@@ -1,7 +1,7 @@
 """
 Task repository.
 
-Data access layer for Tasks and Subtasks.
+Data access layer for Tasks, Subtasks, and TaskDependencies.
 """
 
 from datetime import datetime, timezone
@@ -11,23 +11,27 @@ from sqlalchemy import select, and_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from app.models.task import Task, Subtask, TaskStatus
+from app.models.task import Task, Subtask, TaskDependency, TaskStatus
 from app.models.curriculum import Topic, LearningObjective
 
 logger = logging.getLogger(__name__)
 
 
 async def get_task_by_id(db: AsyncSession, task_id: int) -> Task | None:
-    """Fetch a task by ID, eager loading subtasks and topic."""
+    """Fetch a task by ID, eager loading subtasks, topic, and dependencies."""
     result = await db.execute(
         select(Task)
         .where(Task.id == task_id)
         .options(
             selectinload(Task.topic),
-            selectinload(Task.subtasks).selectinload(Subtask.learning_objective)
+            selectinload(Task.subtasks).selectinload(Subtask.learning_objective),
+            selectinload(Task.dependencies).selectinload(TaskDependency.prerequisite_task),
         )
     )
-    return result.scalar_one_or_none()
+    task = result.scalar_one_or_none()
+    if task:
+        task.prerequisite_task_ids = [dep.prerequisite_task_id for dep in getattr(task, "dependencies", [])]
+    return task
 
 
 async def get_user_tasks_for_day(db: AsyncSession, user_id: int, date: datetime) -> list[Task]:
@@ -47,10 +51,14 @@ async def get_user_tasks_for_day(db: AsyncSession, user_id: int, date: datetime)
         )
         .options(
             selectinload(Task.topic),
-            selectinload(Task.subtasks).selectinload(Subtask.learning_objective)
+            selectinload(Task.subtasks).selectinload(Subtask.learning_objective),
+            selectinload(Task.dependencies).selectinload(TaskDependency.prerequisite_task),
         )
     )
-    return list(result.scalars().all())
+    tasks = list(result.scalars().all())
+    for t in tasks:
+        t.prerequisite_task_ids = [dep.prerequisite_task_id for dep in getattr(t, "dependencies", [])]
+    return tasks
 
 
 async def generate_tasks_for_day(db: AsyncSession, user_id: int, day_number: int, date: datetime) -> list[Task]:
@@ -109,18 +117,88 @@ async def generate_tasks_for_day(db: AsyncSession, user_id: int, day_number: int
 
 
 async def update_task(db: AsyncSession, task: Task, update_data: dict) -> Task:
-    """Update task fields."""
+    """Update task fields with dependency enforcement."""
+    new_status = update_data.get("status")
+    override = update_data.pop("override_dependencies", False)
+
+    if new_status == TaskStatus.COMPLETED and not override:
+        deps_result = await db.execute(
+            select(TaskDependency)
+            .where(TaskDependency.task_id == task.id)
+            .options(selectinload(TaskDependency.prerequisite_task))
+        )
+        deps = deps_result.scalars().all()
+        incomplete_deps = [
+            d.prerequisite_task_id for d in deps
+            if d.prerequisite_task and d.prerequisite_task.status != TaskStatus.COMPLETED
+        ]
+        if incomplete_deps:
+            raise ValueError(
+                f"Cannot complete task {task.id}: prerequisite task(s) {incomplete_deps} are not completed. "
+                "Set override_dependencies=True to bypass."
+            )
+
     for key, value in update_data.items():
         if hasattr(task, key):
             setattr(task, key, value)
             
-    if update_data.get("status") == TaskStatus.COMPLETED and not task.completed_at:
+    if new_status == TaskStatus.COMPLETED and not task.completed_at:
         task.completed_at = datetime.now(timezone.utc)
-    elif update_data.get("status") != TaskStatus.COMPLETED and task.completed_at:
+    elif new_status and new_status != TaskStatus.COMPLETED and task.completed_at:
         task.completed_at = None
 
     await db.flush()
+    if not hasattr(task, "prerequisite_task_ids"):
+        task.prerequisite_task_ids = [dep.prerequisite_task_id for dep in getattr(task, "dependencies", [])]
     return task
+
+
+async def add_task_dependency(db: AsyncSession, task_id: int, prerequisite_task_id: int) -> TaskDependency:
+    """Add a prerequisite dependency to a task."""
+    if task_id == prerequisite_task_id:
+        raise ValueError("A task cannot depend on itself.")
+
+    existing = await db.execute(
+        select(TaskDependency).where(
+            and_(
+                TaskDependency.task_id == task_id,
+                TaskDependency.prerequisite_task_id == prerequisite_task_id,
+            )
+        )
+    )
+    if existing.scalar_one_or_none():
+        raise ValueError(f"Dependency already exists: task {task_id} already depends on {prerequisite_task_id}")
+
+    dep = TaskDependency(task_id=task_id, prerequisite_task_id=prerequisite_task_id)
+    db.add(dep)
+    await db.flush()
+    return dep
+
+
+async def get_task_dependencies(db: AsyncSession, task_id: int) -> list[TaskDependency]:
+    """List prerequisite dependencies for a task."""
+    result = await db.execute(
+        select(TaskDependency).where(TaskDependency.task_id == task_id)
+    )
+    return list(result.scalars().all())
+
+
+async def remove_task_dependency(db: AsyncSession, task_id: int, prerequisite_task_id: int) -> bool:
+    """Remove a prerequisite dependency."""
+    result = await db.execute(
+        select(TaskDependency).where(
+            and_(
+                TaskDependency.task_id == task_id,
+                TaskDependency.prerequisite_task_id == prerequisite_task_id,
+            )
+        )
+    )
+    dep = result.scalar_one_or_none()
+    if dep:
+        await db.delete(dep)
+        await db.flush()
+        return True
+    return False
 
 
 async def get_subtask_by_id(db: AsyncSession, subtask_id: int) -> Subtask | None:
@@ -140,3 +218,4 @@ async def update_subtask(db: AsyncSession, subtask: Subtask, update_data: dict) 
             setattr(subtask, key, value)
     await db.flush()
     return subtask
+

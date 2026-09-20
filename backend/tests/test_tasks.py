@@ -36,6 +36,29 @@ class TestTaskModels:
         assert TaskStatus.COMPLETED == "completed"
         assert TaskStatus.BLOCKED == "blocked"
         assert TaskStatus.SKIPPED == "skipped"
+        assert TaskStatus.NEEDS_REVIEW == "needs_review"
+
+    def test_task_priority_enum(self):
+        """TaskPriority enum should have expected values."""
+        from app.models.task import TaskPriority
+        assert TaskPriority.LOW == "low"
+        assert TaskPriority.MEDIUM == "medium"
+        assert TaskPriority.HIGH == "high"
+        assert TaskPriority.CRITICAL == "critical"
+
+    def test_task_type_enum(self):
+        """TaskType enum should have expected values."""
+        from app.models.task import TaskType
+        assert TaskType.STUDY == "study"
+        assert TaskType.PRACTICE == "practice"
+        assert TaskType.LAB == "lab"
+        assert TaskType.CTF == "ctf"
+        assert TaskType.ASSESSMENT == "assessment"
+
+    def test_task_dependency_model_exists(self):
+        """TaskDependency model should be importable."""
+        from app.models.task import TaskDependency
+        assert TaskDependency.__tablename__ == "task_dependencies"
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -109,20 +132,31 @@ def _mock_subtask(id=1, task_id=1, lo_id=1):
     subtask.learning_objective = _mock_learning_objective(id=lo_id)
     return subtask
 
+from app.models.task import TaskPriority, TaskType
+
+
 def _mock_task(id=1, user_id=1, topic_id=1, status=TaskStatus.TODO):
     task = MagicMock()
     task.id = id
     task.user_id = user_id
     task.topic_id = topic_id
     task.status = status
+    task.priority = TaskPriority.MEDIUM
+    task.task_type = TaskType.STUDY
     task.notes = None
     task.estimated_hours = 2.0
     task.actual_hours = 0.0
     task.assigned_date = datetime.now(timezone.utc)
+    task.due_date = None
     task.completed_at = None
+    task.confidence_score = None
+    task.review_date = None
     task.topic = _mock_topic(id=topic_id)
     task.subtasks = [_mock_subtask(id=1, task_id=id, lo_id=1)]
+    task.dependencies = []
+    task.prerequisite_task_ids = []
     return task
+
 
 
 class TestTaskEndpoints:
@@ -224,3 +258,75 @@ class TestTaskEndpoints:
                 json={"status": "completed"}
             )
         assert response.status_code == 404
+
+    @pytest.mark.asyncio
+    async def test_update_task_dependency_blocked(self, authenticated_client):
+        """PATCH /tasks/{id} returns 400 when completing a task with unmet dependencies."""
+        task = _mock_task(id=1, user_id=1)
+        with patch("app.api.v1.tasks.get_task_by_id", new_callable=AsyncMock, return_value=task):
+            with patch(
+                "app.api.v1.tasks.update_task",
+                new_callable=AsyncMock,
+                side_effect=ValueError("Cannot complete task 1: prerequisite task(s) [2] are not completed.")
+            ):
+                response = await authenticated_client.patch(
+                    "/api/v1/tasks/1",
+                    json={"status": "completed"}
+                )
+        assert response.status_code == 400
+        assert "prerequisite" in response.json()["detail"]
+
+    @pytest.mark.asyncio
+    async def test_add_dependency_endpoint_success(self, authenticated_client):
+        """POST /tasks/{id}/dependencies successfully adds a prerequisite dependency."""
+        task1 = _mock_task(id=1, user_id=1)
+        task2 = _mock_task(id=2, user_id=1)
+        dep_mock = MagicMock()
+        dep_mock.id = 10
+        dep_mock.task_id = 1
+        dep_mock.prerequisite_task_id = 2
+        dep_mock.created_at = datetime.now(timezone.utc)
+
+        async def mock_get_task(db, tid):
+            if tid == 1:
+                return task1
+            elif tid == 2:
+                return task2
+            return None
+
+        with patch("app.api.v1.tasks.get_task_by_id", side_effect=mock_get_task):
+            with patch("app.api.v1.tasks.add_task_dependency", new_callable=AsyncMock, return_value=dep_mock):
+                response = await authenticated_client.post(
+                    "/api/v1/tasks/1/dependencies",
+                    json={"prerequisite_task_id": 2}
+                )
+        assert response.status_code == 201
+        assert response.json()["task_id"] == 1
+        assert response.json()["prerequisite_task_id"] == 2
+
+    @pytest.mark.asyncio
+    async def test_list_dependencies_endpoint(self, authenticated_client):
+        """GET /tasks/{id}/dependencies returns list of dependencies."""
+        task = _mock_task(id=1, user_id=1)
+        dep_mock = MagicMock()
+        dep_mock.id = 10
+        dep_mock.task_id = 1
+        dep_mock.prerequisite_task_id = 2
+        dep_mock.created_at = datetime.now(timezone.utc)
+
+        with patch("app.api.v1.tasks.get_task_by_id", new_callable=AsyncMock, return_value=task):
+            with patch("app.api.v1.tasks.get_task_dependencies", new_callable=AsyncMock, return_value=[dep_mock]):
+                response = await authenticated_client.get("/api/v1/tasks/1/dependencies")
+        assert response.status_code == 200
+        assert len(response.json()) == 1
+        assert response.json()[0]["prerequisite_task_id"] == 2
+
+    @pytest.mark.asyncio
+    async def test_remove_dependency_endpoint(self, authenticated_client):
+        """DELETE /tasks/{id}/dependencies/{prereq_id} removes dependency."""
+        task = _mock_task(id=1, user_id=1)
+        with patch("app.api.v1.tasks.get_task_by_id", new_callable=AsyncMock, return_value=task):
+            with patch("app.api.v1.tasks.remove_task_dependency", new_callable=AsyncMock, return_value=True):
+                response = await authenticated_client.delete("/api/v1/tasks/1/dependencies/2")
+        assert response.status_code == 204
+

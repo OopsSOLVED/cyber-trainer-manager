@@ -21,6 +21,31 @@ class TaskStatus(str, PyEnum):
     COMPLETED = "completed"
     BLOCKED = "blocked"
     SKIPPED = "skipped"
+    NEEDS_REVIEW = "needs_review"
+
+
+class TaskPriority(str, PyEnum):
+    """Priority levels for tasks."""
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"
+
+
+class TaskType(str, PyEnum):
+    """Types of tasks in the cybersecurity trainer curriculum."""
+    STUDY = "study"
+    PRACTICE = "practice"
+    LAB = "lab"
+    CTF = "ctf"
+    READING = "reading"
+    QUIZ = "quiz"
+    REVIEW = "review"
+    EXPLAIN = "explain"
+    TEACH = "teach"
+    PROJECT = "project"
+    ASSESSMENT = "assessment"
+    TROUBLESHOOTING = "troubleshooting"
 
 
 class Task(Base):
@@ -42,19 +67,42 @@ class Task(Base):
         default=TaskStatus.TODO,
         nullable=False,
     )
+    priority: Mapped[TaskPriority] = mapped_column(
+        String(20),
+        default=TaskPriority.MEDIUM,
+        nullable=False,
+    )
+    task_type: Mapped[TaskType] = mapped_column(
+        String(30),
+        default=TaskType.STUDY,
+        nullable=False,
+    )
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     
     # Time Tracking
     estimated_hours: Mapped[float] = mapped_column(Float, nullable=False, default=1.0)
     actual_hours: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
     
-    # Scheduling
+    # Scheduling & Deadlines
     assigned_date: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True, 
         comment="When this task was scheduled to be worked on"
     )
+    due_date: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True,
+        comment="Due date for task completion"
+    )
     completed_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True
+    )
+    
+    # Assessment & Review
+    confidence_score: Mapped[int | None] = mapped_column(
+        Integer, nullable=True, comment="Confidence score 0-100"
+    )
+    review_date: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True,
+        comment="Scheduled review date for spaced repetition"
     )
 
     # Relationships
@@ -65,9 +113,49 @@ class Task(Base):
         cascade="all, delete-orphan",
         order_by="Subtask.order",
     )
+    dependencies: Mapped[list["TaskDependency"]] = relationship(
+        foreign_keys="[TaskDependency.task_id]",
+        back_populates="task",
+        cascade="all, delete-orphan",
+    )
+    dependents: Mapped[list["TaskDependency"]] = relationship(
+        foreign_keys="[TaskDependency.prerequisite_task_id]",
+        back_populates="prerequisite_task",
+        cascade="all, delete-orphan",
+    )
 
     def __repr__(self) -> str:
         return f"<Task(id={self.id}, user_id={self.user_id}, topic_id={self.topic_id}, status={self.status})>"
+
+
+class TaskDependency(Base):
+    """
+    Task prerequisite dependency relationship.
+    A task cannot be completed if prerequisite tasks are not completed (unless overridden).
+    """
+    __tablename__ = "task_dependencies"
+
+    task_id: Mapped[int] = mapped_column(
+        ForeignKey("tasks.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    prerequisite_task_id: Mapped[int] = mapped_column(
+        ForeignKey("tasks.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+
+    # Relationships
+    task: Mapped["Task"] = relationship(
+        foreign_keys=[task_id],
+        back_populates="dependencies",
+    )
+    prerequisite_task: Mapped["Task"] = relationship(
+        foreign_keys=[prerequisite_task_id],
+        back_populates="dependents",
+    )
+
+    def __repr__(self) -> str:
+        return f"<TaskDependency(task_id={self.task_id}, prerequisite_task_id={self.prerequisite_task_id})>"
 
 
 class Subtask(Base):
@@ -98,3 +186,4 @@ class Subtask(Base):
 
     def __repr__(self) -> str:
         return f"<Subtask(id={self.id}, task_id={self.task_id}, status={self.status})>"
+

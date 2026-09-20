@@ -4,9 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.12.0] — 2026-09-20
+
+### Added — Session 5: Task Engine & Dependencies Realignment
+- **Models**:
+  - `TaskPriority`: `low`, `medium`, `high`, `critical`.
+  - `TaskType`: `study`, `practice`, `lab`, `ctf`, `reading`, `quiz`, `review`, `explain`, `teach`, `project`, `assessment`, `troubleshooting`.
+  - Added `priority`, `task_type`, `due_date`, `confidence_score`, and `review_date` to `Task` model.
+  - `TaskDependency` ORM model for declaring prerequisite task chains.
+- **Dependency Enforcement**:
+  - Enforced prerequisite dependency validation in `update_task`: prevents accidental completion if prerequisites are incomplete.
+  - Added `override_dependencies` flag allowing user override when desired.
+- **API Endpoints**:
+  - `POST /api/v1/tasks/{id}/dependencies`: declare a prerequisite dependency.
+  - `GET /api/v1/tasks/{id}/dependencies`: list prerequisite dependencies.
+  - `DELETE /api/v1/tasks/{id}/dependencies/{prereq_id}`: remove a prerequisite dependency.
+- **Database Migrations**:
+  - Alembic revision `d5e6f7g8h9i0_add_task_dependencies_and_fields.py`.
+- **Tests**:
+  - 7 new test cases covering task priorities, types, dependencies, blocked updates, and dependency management routes (96 tests total passing).
+
 ---
 
 ## [0.11.0] — 2026-09-19
+
 
 ### Added — Session 11: Dashboard Overview & Polish
 

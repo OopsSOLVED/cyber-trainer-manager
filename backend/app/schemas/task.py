@@ -7,7 +7,7 @@ Pydantic models for request/response validation in task endpoints.
 from datetime import datetime
 from pydantic import BaseModel, Field
 
-from app.models.task import TaskStatus
+from app.models.task import TaskStatus, TaskPriority, TaskType
 from app.schemas.curriculum import TopicBrief, LearningObjectiveResponse
 
 
@@ -18,8 +18,9 @@ class SubtaskBase(BaseModel):
     notes: str | None = None
 
 
-class SubtaskUpdate(SubtaskBase):
-    pass
+class SubtaskUpdate(BaseModel):
+    status: TaskStatus | None = None
+    notes: str | None = None
 
 
 class SubtaskResponse(SubtaskBase):
@@ -32,16 +33,44 @@ class SubtaskResponse(SubtaskBase):
     model_config = {"from_attributes": True}
 
 
+# ── Task Dependency ──────────────────────────────────────────────
+
+class TaskDependencyCreate(BaseModel):
+    prerequisite_task_id: int = Field(..., description="ID of the prerequisite task that must be completed first")
+
+
+class TaskDependencyResponse(BaseModel):
+    id: int
+    task_id: int
+    prerequisite_task_id: int
+    created_at: datetime
+
+    model_config = {"from_attributes": True}
+
+
 # ── Task ─────────────────────────────────────────────────────────
 
 class TaskBase(BaseModel):
     status: TaskStatus = TaskStatus.TODO
+    priority: TaskPriority = TaskPriority.MEDIUM
+    task_type: TaskType = TaskType.STUDY
     notes: str | None = None
     actual_hours: float = 0.0
+    due_date: datetime | None = None
+    confidence_score: int | None = Field(default=None, ge=0, le=100, description="Confidence score from 0 to 100")
+    review_date: datetime | None = None
 
 
-class TaskUpdate(TaskBase):
-    pass
+class TaskUpdate(BaseModel):
+    status: TaskStatus | None = None
+    priority: TaskPriority | None = None
+    task_type: TaskType | None = None
+    notes: str | None = None
+    actual_hours: float | None = None
+    due_date: datetime | None = None
+    confidence_score: int | None = Field(default=None, ge=0, le=100)
+    review_date: datetime | None = None
+    override_dependencies: bool = Field(default=False, description="Allow completing task even if prerequisites are incomplete")
 
 
 class TaskResponse(TaskBase):
@@ -53,6 +82,7 @@ class TaskResponse(TaskBase):
     completed_at: datetime | None = None
     topic: TopicBrief
     subtasks: list[SubtaskResponse] = []
+    prerequisite_task_ids: list[int] = []
 
     model_config = {"from_attributes": True}
 
@@ -61,3 +91,4 @@ class TaskResponse(TaskBase):
 
 class TaskGenerationRequest(BaseModel):
     day_number: int = Field(ge=1, le=365, description="Day number in the 196-day plan")
+

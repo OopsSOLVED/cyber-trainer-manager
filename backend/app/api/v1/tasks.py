@@ -14,14 +14,25 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.database import get_db
 from app.api.deps import get_current_user
 from app.models.user import User
-from app.schemas.task import TaskResponse, TaskUpdate, TaskGenerationRequest, SubtaskResponse, SubtaskUpdate
+from app.schemas.task import (
+    TaskResponse,
+    TaskUpdate,
+    TaskGenerationRequest,
+    SubtaskResponse,
+    SubtaskUpdate,
+    TaskDependencyCreate,
+    TaskDependencyResponse,
+)
 from app.repositories.task import (
     get_user_tasks_for_day,
     generate_tasks_for_day,
     get_task_by_id,
     update_task,
     get_subtask_by_id,
-    update_subtask
+    update_subtask,
+    add_task_dependency,
+    get_task_dependencies,
+    remove_task_dependency,
 )
 
 logger = logging.getLogger(__name__)
@@ -69,7 +80,7 @@ async def get_today_tasks(
     "/{task_id}",
     response_model=TaskResponse,
     summary="Update a task",
-    description="Updates task status, notes, or actual hours.",
+    description="Updates task status, notes, priority, task_type, or hours. Validates prerequisites before completion.",
 )
 async def update_task_endpoint(
     task_id: int,
@@ -77,15 +88,96 @@ async def update_task_endpoint(
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db)
 ):
-    """Update a task's status or notes."""
+    """Update a task's status or details with dependency enforcement."""
     task = await get_task_by_id(db, task_id)
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
     if task.user_id != current_user.id:
         raise HTTPException(status_code=403, detail="Not authorized to update this task")
-        
-    updated = await update_task(db, task, update_data.model_dump(exclude_unset=True))
-    return updated
+
+    try:
+        updated = await update_task(db, task, update_data.model_dump(exclude_unset=True))
+        return updated
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
+
+@router.post(
+    "/{task_id}/dependencies",
+    response_model=TaskDependencyResponse,
+    status_code=status.HTTP_201_CREATED,
+    summary="Add a task prerequisite dependency",
+    description="Declares that task_id depends on prerequisite_task_id being completed first.",
+)
+async def add_dependency_endpoint(
+    task_id: int,
+    dependency_data: TaskDependencyCreate,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """Add a prerequisite dependency to a task."""
+    task = await get_task_by_id(db, task_id)
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    if task.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to modify this task")
+
+    prereq_task = await get_task_by_id(db, dependency_data.prerequisite_task_id)
+    if not prereq_task:
+        raise HTTPException(status_code=404, detail="Prerequisite task not found")
+    if prereq_task.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Prerequisite task belongs to a different user")
+
+    try:
+        dep = await add_task_dependency(db, task_id, dependency_data.prerequisite_task_id)
+        return dep
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
+
+@router.get(
+    "/{task_id}/dependencies",
+    response_model=list[TaskDependencyResponse],
+    summary="List task dependencies",
+    description="Returns all prerequisite dependencies for the specified task.",
+)
+async def list_dependencies_endpoint(
+    task_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """List dependencies for a task."""
+    task = await get_task_by_id(db, task_id)
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    if task.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to view this task")
+
+    return await get_task_dependencies(db, task_id)
+
+
+@router.delete(
+    "/{task_id}/dependencies/{prerequisite_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    summary="Remove a task prerequisite dependency",
+)
+async def remove_dependency_endpoint(
+    task_id: int,
+    prerequisite_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """Remove a prerequisite dependency from a task."""
+    task = await get_task_by_id(db, task_id)
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    if task.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to modify this task")
+
+    removed = await remove_task_dependency(db, task_id, prerequisite_id)
+    if not removed:
+        raise HTTPException(status_code=404, detail="Dependency not found")
+    return None
 
 
 @router.patch(
@@ -112,3 +204,4 @@ async def update_subtask_endpoint(
         
     updated = await update_subtask(db, subtask, update_data.model_dump(exclude_unset=True))
     return updated
+

@@ -15,4 +15,11 @@ from app.models.curriculum import (  # noqa: F401
     LearningObjective,
 )
 
-from app.models.task import Task, Subtask  # noqa: F401
+from app.models.task import (  # noqa: F401
+    Task,
+    Subtask,
+    TaskDependency,
+    TaskStatus,
+    TaskPriority,
+    TaskType,
+)
