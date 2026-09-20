@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.15.0] — 2026-09-20
+
+### Added — Session 8: Roadmap UI & Multi-Dimensional Navigation
+- **Frontend Roadmap Navigation Matrix (`frontend/src/pages/Roadmap.tsx`)**:
+  - **Global Curriculum Banner**: Overall progress percentage, completed topic counts, and visual gradient meter across all 196 days.
+  - **Phase Navigation Cards**: 4 phase tabs (Foundations, Core Offensive/Defensive, Enterprise & Specialization, Advanced & Portfolio) with real-time completion progress meters.
+  - **Skill Layer & Domain Grid**: Hierarchy breakdown showing day spans (e.g. Days 1–7), estimated hours, and domain-level progress bars.
+  - **Domain Inspector & Topic Explorer**:
+    - Sequential daily topic list with difficulty badges, estimated hours, and status icons.
+    - Expandable learning objectives displaying measurable verification criteria.
+    - 1-click **Launch Day Mission** action button routing directly to `/today?day=X`.
+  - **Multi-Dimensional Filtering**: Search input across topics and domains, difficulty filter dropdown, and completion status filter dropdown.
+- **Backend API Additions**:
+  - `GET /api/v1/curriculum/roadmap`: Returns full curriculum hierarchy with real-time completion metrics derived from user's database tasks.
+  - `GET /api/v1/curriculum/domains/{domain_id}/topics-with-status`: Returns all topics in a domain with objectives and user task statuses.
+  - `get_current_user_optional` authentication dependency in `deps.py`.
+- **Navigation**:
+  - Added `/roadmap` route in `App.tsx` (aliasing `/curriculum`).
+  - Added "Roadmap" item with `Map` icon to `Sidebar.tsx`.
+- **Tests**:
+  - Added 3 automated tests in `test_curriculum.py` covering roadmap endpoints and progress calculation. Total **107 backend tests passing**.
+
+---
+
 ## [0.14.0] — 2026-09-20
 
 ### Added — Session 7: Today View & Actionable Daily Execution

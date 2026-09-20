@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, 
-  BookOpen, 
+  Map, 
   ListTodo, 
   CheckSquare,
   Settings, 
@@ -17,7 +17,7 @@ const navItems = [
   { name: 'Dashboard', path: '/', icon: LayoutDashboard },
   { name: 'Today', path: '/today', icon: CheckSquare },
   { name: 'Daily Tasks', path: '/tasks', icon: ListTodo },
-  { name: 'Curriculum', path: '/curriculum', icon: BookOpen },
+  { name: 'Roadmap', path: '/roadmap', icon: Map },
   { name: 'Labs', path: '/labs', icon: Terminal },
   { name: 'Settings', path: '/settings', icon: Settings },
 ];

@@ -283,3 +283,109 @@ class TestCurriculumEndpoints:
         data = response.json()
         assert len(data["skill_layers"]) == 1
         assert len(data["skill_layers"][0]["domains"]) == 1
+
+    @pytest.mark.asyncio
+    async def test_get_roadmap_endpoint(self, client):
+        """GET /curriculum/roadmap should return full hierarchy with progress."""
+        roadmap_data = {
+            "total_phases": 4,
+            "total_skill_layers": 10,
+            "total_domains": 28,
+            "total_topics": 196,
+            "total_days": 196,
+            "completed_topics": 14,
+            "progress_percent": 7.1,
+            "phases": [
+                {
+                    "id": 1,
+                    "name": "Foundations",
+                    "description": "Core computer and network basics",
+                    "order": 1,
+                    "estimated_weeks": 7,
+                    "total_topics": 49,
+                    "completed_topics": 14,
+                    "progress_percent": 28.6,
+                    "skill_layers": [
+                        {
+                            "id": 1,
+                            "name": "Computer Foundations",
+                            "description": "Hardware and OS",
+                            "order": 1,
+                            "estimated_days": 14,
+                            "domain_count": 2,
+                            "total_topics": 14,
+                            "completed_topics": 14,
+                            "progress_percent": 100.0,
+                            "domains": [
+                                {
+                                    "id": 1,
+                                    "name": "Hardware Architecture",
+                                    "description": "CPU, RAM, Storage",
+                                    "order": 1,
+                                    "estimated_days": 7,
+                                    "topic_count": 7,
+                                    "day_start": 1,
+                                    "day_end": 7,
+                                    "total_hours": 21.0,
+                                    "completed_topics": 7,
+                                    "progress_percent": 100.0,
+                                }
+                            ],
+                        }
+                    ],
+                }
+            ],
+        }
+        with patch("app.api.v1.curriculum.get_roadmap_with_progress", new_callable=AsyncMock, return_value=roadmap_data):
+            response = await client.get("/api/v1/curriculum/roadmap")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["total_phases"] == 4
+        assert data["total_domains"] == 28
+        assert data["completed_topics"] == 14
+        assert len(data["phases"]) == 1
+        assert len(data["phases"][0]["skill_layers"]) == 1
+        assert data["phases"][0]["skill_layers"][0]["domains"][0]["progress_percent"] == 100.0
+
+    @pytest.mark.asyncio
+    async def test_get_domain_topics_with_status_success(self, client):
+        """GET /curriculum/domains/{id}/topics-with-status should return topics."""
+        domain_topics_data = {
+            "domain_id": 1,
+            "domain_name": "Hardware Architecture",
+            "domain_description": "CPU, RAM, Storage",
+            "day_start": 1,
+            "day_end": 7,
+            "total_topics": 1,
+            "completed_topics": 1,
+            "progress_percent": 100.0,
+            "topics": [
+                {
+                    "id": 1,
+                    "name": "CPU Architecture & Registers",
+                    "description": "x86/x64 registers and instruction cycles",
+                    "order": 1,
+                    "day_number": 1,
+                    "estimated_hours": 3.0,
+                    "difficulty": "beginner",
+                    "objectives_count": 3,
+                    "objectives": [],
+                    "task_id": 101,
+                    "status": "completed",
+                }
+            ],
+        }
+        with patch("app.api.v1.curriculum.get_domain_topics_with_status", new_callable=AsyncMock, return_value=domain_topics_data):
+            response = await client.get("/api/v1/curriculum/domains/1/topics-with-status")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["domain_name"] == "Hardware Architecture"
+        assert len(data["topics"]) == 1
+        assert data["topics"][0]["status"] == "completed"
+
+    @pytest.mark.asyncio
+    async def test_get_domain_topics_with_status_not_found(self, client):
+        """GET /curriculum/domains/999/topics-with-status should 404 if domain missing."""
+        with patch("app.api.v1.curriculum.get_domain_topics_with_status", new_callable=AsyncMock, return_value=None):
+            response = await client.get("/api/v1/curriculum/domains/999/topics-with-status")
+        assert response.status_code == 404

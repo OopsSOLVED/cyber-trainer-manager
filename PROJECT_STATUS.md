@@ -2,9 +2,9 @@
 
 ## Specification Compliance & Session-Gated Progress
 **Architecture Plan**: 25 Planned Development Sessions (Section 32)  
-**Current Milestone**: Session 7 Complete — Ready for Session 8  
+**Current Milestone**: Session 8 Complete — Ready for Session 9  
 **Date**: 2026-09-20  
-**Test Suite**: 104 Passed (0 Failures)  
+**Test Suite**: 107 Passed (0 Failures)  
 **Frontend**: TypeScript 0 errors, Vite build successful  
 
 ---
@@ -20,9 +20,8 @@
 | **5** | **Task engine & dependencies** | ✅ Done | Tasks, Subtasks, TaskPriority, TaskType, due dates, TaskDependency model & enforcement |
 | **6** | **Full curriculum seed** | ✅ Done | Complete 196-day roadmap across all 28 weeks, 4 phases, 10 skill layers, 588 objectives |
 | **7** | **Today view** | ✅ Done | Actionable daily view, daily objective banner, overdue queue, reflection & task detail modal |
-| **8** | **Roadmap UI** | ⏳ **NEXT** | Full interactive roadmap navigation, phase/domain filters, progress indicators |
-
-| **9** | **Study sessions** | 📋 Backlog | Timer engine (start/stop), session persistence, interruption tracking, actual study time |
+| **8** | **Roadmap UI** | ✅ Done | Full interactive roadmap navigation, phase/domain hierarchy, live progress, topic filters |
+| **9** | **Study sessions** | ⏳ **NEXT** | Timer engine (start/stop), session persistence, interruption tracking, actual study time |
 | **10** | **Competency engine** | 📋 Backlog | 6 competency levels (Unknown → Teaching-ready), progression rules, mastery tracking |
 | **11** | **Review engine** | 📋 Backlog | Spaced repetition, weak-area detection, confidence-based revision queue |
 | **12** | **Evidence system** | 📋 Backlog | Practical work evidence attachments (screenshots, terminal logs, pcaps, writeups) |
@@ -152,10 +151,34 @@ npm run dev
 
 ---
 
+## Completed in Session 8: Roadmap UI
+
+- **Interactive Roadmap Page (`frontend/src/pages/Roadmap.tsx`)**:
+  - **Global Curriculum Progress Banner**: Displays overall curriculum completion percentage, total phases (4), skill layers (10), domains (28), and days (196) with dynamic neon gradient bar.
+  - **Phase Navigation Cards**: 4 phase tabs with order badges, estimated weeks, and real-time completion progress meters.
+  - **Skill Layer & Domain Hierarchy**: Visual breakdown of each skill layer with responsive domain cards showing day ranges (e.g. Days 1–7), total hours, and completion progress bars.
+  - **Domain Inspector & Topic Explorer**:
+    - Sequential topic cards showing Day numbers, difficulty badges (Beginner, Intermediate, Advanced, Expert), estimated hours, and status icons (Completed, In Progress, Unstarted).
+    - Expandable learning objectives for each topic with measurable criteria.
+    - 1-click **Launch Day Mission** button routing directly to `/today?day=X` for immediate task execution.
+  - **Multi-Dimensional Filtering**: Search input across topic/domain names and day numbers, difficulty filter dropdown, and completion status filter dropdown.
+- **Backend API Additions**:
+  - `GET /api/v1/curriculum/roadmap`: Returns full curriculum hierarchy with real-time completion calculations derived from user's database tasks.
+  - `GET /api/v1/curriculum/domains/{domain_id}/topics-with-status`: Returns all topics in a domain with objectives and user task statuses.
+  - Optional JWT auth dependency (`get_current_user_optional`) allowing both authenticated progress tracking and public preview.
+- **Routing & Navigation**:
+  - Updated `App.tsx` registering `/roadmap` and aliasing `/curriculum`.
+  - Updated `Sidebar.tsx` with "Roadmap" link and `Map` icon.
+- **Tests**:
+  - 3 new backend tests in `test_curriculum.py` covering roadmap endpoints and progress calculation. Total **107 tests passing**.
+
+---
+
 ## Next Session Objective
-**Session 8 — Roadmap UI**:
-- Build dedicated full-roadmap exploration page with Phase, Skill Layer, and Domain hierarchy navigation.
-- Implement progress indicators, completed task counts, and visual mastery bars per domain.
-- Add filtering by difficulty, phase, and completion status.
+**Session 9 — Study Sessions**:
+- Implement StudySession model, schemas, repository, and REST endpoints (start session, pause, resume, complete).
+- Interruption tracking and distraction logging.
+- Actual study duration calculation and sync with task actual hours.
+- Frontend study timer widget with persistent state across route navigation.
 
 

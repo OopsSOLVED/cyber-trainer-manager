@@ -20,6 +20,30 @@ logger = logging.getLogger(__name__)
 
 # OAuth2 scheme — expects "Authorization: Bearer <token>" header
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login")
+oauth2_scheme_optional = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login", auto_error=False)
+
+
+async def get_current_user_optional(
+    token: str | None = Depends(oauth2_scheme_optional),
+    db: AsyncSession = Depends(get_db),
+) -> User | None:
+    """Extract current user if token is provided, otherwise return None."""
+    if not token:
+        return None
+    payload = decode_access_token(token)
+    if not payload:
+        return None
+    user_id_str = payload.get("sub")
+    if not user_id_str:
+        return None
+    try:
+        user_id = int(user_id_str)
+    except (ValueError, TypeError):
+        return None
+    user = await get_user_by_id(db, user_id)
+    if not user or not user.is_active:
+        return None
+    return user
 
 
 async def get_current_user(

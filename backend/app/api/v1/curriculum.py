@@ -11,6 +11,8 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
+from app.api.deps import get_current_user_optional
+from app.models.user import User
 from app.repositories.curriculum import (
     get_all_phases,
     get_phase_by_id,
@@ -20,6 +22,8 @@ from app.repositories.curriculum import (
     get_topic_by_id,
     get_topics_by_day,
     get_curriculum_stats,
+    get_roadmap_with_progress,
+    get_domain_topics_with_status,
 )
 from app.schemas.curriculum import (
     PhaseBrief,
@@ -29,6 +33,8 @@ from app.schemas.curriculum import (
     DomainDetail,
     TopicDetail,
     CurriculumStats,
+    RoadmapResponse,
+    DomainTopicsResponse,
 )
 
 logger = logging.getLogger(__name__)
@@ -145,3 +151,41 @@ async def get_day_topics(day_number: int, db: AsyncSession = Depends(get_db)):
         )
     topics = await get_topics_by_day(db, day_number)
     return topics
+
+
+@router.get(
+    "/roadmap",
+    response_model=RoadmapResponse,
+    summary="Get full roadmap with progress",
+    description="Returns full curriculum hierarchy across all 4 phases, 10 skill layers, and 28 domains with user completion metrics.",
+)
+async def get_roadmap(
+    db: AsyncSession = Depends(get_db),
+    current_user: User | None = Depends(get_current_user_optional),
+):
+    """Get full roadmap structure with live user completion progress."""
+    user_id = current_user.id if current_user else None
+    roadmap = await get_roadmap_with_progress(db, user_id=user_id)
+    return roadmap
+
+
+@router.get(
+    "/domains/{domain_id}/topics-with-status",
+    response_model=DomainTopicsResponse,
+    summary="Get domain topics with completion status",
+    description="Returns all topics in a domain with learning objectives and user task completion status.",
+)
+async def get_domain_topics(
+    domain_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User | None = Depends(get_current_user_optional),
+):
+    """Get domain topics with user task status."""
+    user_id = current_user.id if current_user else None
+    result = await get_domain_topics_with_status(db, domain_id=domain_id, user_id=user_id)
+    if not result:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Domain not found",
+        )
+    return result
