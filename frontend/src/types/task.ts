@@ -39,3 +39,15 @@ export interface Task {
 export interface TaskGenerationRequest {
   day_number: number;
 }
+
+export interface TodaySummary {
+  total_tasks: number;
+  completed_tasks: number;
+  in_progress_tasks: number;
+  overdue_tasks: number;
+  estimated_hours: number;
+  actual_hours: number;
+  completion_percentage: number;
+  daily_objective: string | null;
+}
+

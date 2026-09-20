@@ -330,3 +330,67 @@ class TestTaskEndpoints:
                 response = await authenticated_client.delete("/api/v1/tasks/1/dependencies/2")
         assert response.status_code == 204
 
+    @pytest.mark.asyncio
+    async def test_get_overdue_tasks(self, authenticated_client):
+        """GET /tasks/overdue should return overdue tasks."""
+        overdue_task = _mock_task(id=10, user_id=1, status=TaskStatus.TODO)
+        with patch("app.api.v1.tasks.get_overdue_tasks_for_user", new_callable=AsyncMock, return_value=[overdue_task]):
+            response = await authenticated_client.get("/api/v1/tasks/overdue")
+        assert response.status_code == 200
+        assert len(response.json()) == 1
+        assert response.json()[0]["id"] == 10
+
+    @pytest.mark.asyncio
+    async def test_get_today_summary(self, authenticated_client):
+        """GET /tasks/summary/today should return today's metrics and daily objective."""
+        t1 = _mock_task(id=1, user_id=1, status=TaskStatus.COMPLETED)
+        t2 = _mock_task(id=2, user_id=1, status=TaskStatus.IN_PROGRESS)
+        with patch("app.api.v1.tasks.get_user_tasks_for_day", new_callable=AsyncMock, return_value=[t1, t2]):
+            with patch("app.api.v1.tasks.get_overdue_tasks_for_user", new_callable=AsyncMock, return_value=[]):
+                response = await authenticated_client.get("/api/v1/tasks/summary/today")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["total_tasks"] == 2
+        assert data["completed_tasks"] == 1
+        assert data["in_progress_tasks"] == 1
+        assert data["completion_percentage"] == 50.0
+        assert data["daily_objective"] is not None
+
+    @pytest.mark.asyncio
+    async def test_get_task_detail_endpoint(self, authenticated_client):
+        """GET /tasks/{task_id} should return task detail."""
+        task = _mock_task(id=1, user_id=1)
+        with patch("app.api.v1.tasks.get_task_by_id", new_callable=AsyncMock, return_value=task):
+            response = await authenticated_client.get("/api/v1/tasks/1")
+        assert response.status_code == 200
+        assert response.json()["id"] == 1
+        assert response.json()["topic"]["name"] == "Subnetting"
+
+    @pytest.mark.asyncio
+    async def test_task_completion_workflow_with_confidence_and_hours(self, authenticated_client):
+        """PATCH /tasks/{id} should update status to completed, confidence score, and hours."""
+        task = _mock_task(id=1, user_id=1)
+        updated = _mock_task(id=1, user_id=1, status=TaskStatus.COMPLETED)
+        updated.confidence_score = 90
+        updated.actual_hours = 2.5
+        updated.notes = "Understood CIDR calculations clearly."
+
+        with patch("app.api.v1.tasks.get_task_by_id", new_callable=AsyncMock, return_value=task):
+            with patch("app.api.v1.tasks.update_task", new_callable=AsyncMock, return_value=updated):
+                response = await authenticated_client.patch(
+                    "/api/v1/tasks/1",
+                    json={
+                        "status": "completed",
+                        "confidence_score": 90,
+                        "actual_hours": 2.5,
+                        "notes": "Understood CIDR calculations clearly."
+                    }
+                )
+        assert response.status_code == 200
+        data = response.json()
+        assert data["status"] == "completed"
+        assert data["confidence_score"] == 90
+        assert data["actual_hours"] == 2.5
+        assert "CIDR" in data["notes"]
+
+

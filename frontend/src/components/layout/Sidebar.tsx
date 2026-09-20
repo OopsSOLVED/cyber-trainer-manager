@@ -3,21 +3,25 @@ import {
   LayoutDashboard, 
   BookOpen, 
   ListTodo, 
+  CheckSquare,
   Settings, 
   Terminal,
   ShieldAlert
 } from 'lucide-react';
+
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { useAuthStore } from '../../store/useAuthStore';
 
 const navItems = [
   { name: 'Dashboard', path: '/', icon: LayoutDashboard },
-  { name: 'Curriculum', path: '/curriculum', icon: BookOpen },
+  { name: 'Today', path: '/today', icon: CheckSquare },
   { name: 'Daily Tasks', path: '/tasks', icon: ListTodo },
+  { name: 'Curriculum', path: '/curriculum', icon: BookOpen },
   { name: 'Labs', path: '/labs', icon: Terminal },
   { name: 'Settings', path: '/settings', icon: Settings },
 ];
+
 
 export function Sidebar() {
   const location = useLocation();

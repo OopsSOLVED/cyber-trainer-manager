@@ -6,6 +6,7 @@ import { Register } from './pages/Register';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { Curriculum } from './pages/Curriculum';
 import { Tasks } from './pages/Tasks';
+import { Today } from './pages/Today';
 
 // Dummy components for unbuilt routes
 const Placeholder = ({ title }: { title: string }) => (
@@ -26,8 +27,9 @@ function App() {
         
         <Route path="/" element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
           <Route index element={<Dashboard />} />
-          <Route path="curriculum" element={<Curriculum />} />
+          <Route path="today" element={<Today />} />
           <Route path="tasks" element={<Tasks />} />
+          <Route path="curriculum" element={<Curriculum />} />
           <Route path="labs" element={<Placeholder title="Labs & CTFs" />} />
           <Route path="settings" element={<Placeholder title="Settings" />} />
         </Route>
@@ -35,5 +37,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;

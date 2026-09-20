@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.14.0] — 2026-09-20
+
+### Added — Session 7: Today View & Actionable Daily Execution
+- **Frontend Today Execution Interface (`frontend/src/pages/Today.tsx`)**:
+  - **Daily Objective Banner**: Displays Day number, headline learning objective, domain context, and day-switcher input to jump between days.
+  - **Summary Metrics Bar**: Real-time progress bar, completion percentage, active vs completed counts, estimated vs logged study hours, and overdue counter.
+  - **Overdue Revision Queue**: Dedicated alert panel highlighting prior unfinished tasks with 1-click completion.
+  - **Actionable Task Cards**: Full status toggling (Todo, In Progress, Completed), type badges, priority indicators, estimated hours, and interactive subtask checkpoints.
+  - **Task Detail & Reflection Modal (Section 22 UX)**:
+    - Displays learning objective, action steps, deliverable/evidence criteria.
+    - Learner reflection prompt: *"What did I understand today that I could not explain yesterday?"*
+    - Interactive confidence score slider (0–100%) and actual hours logged input with real-time API sync.
+- **Backend API Additions**:
+  - `GET /api/v1/tasks/today`: returns today's tasks with full attributes and subtasks.
+  - `GET /api/v1/tasks/overdue`: returns uncompleted tasks assigned before today.
+  - `GET /api/v1/tasks/summary/today`: returns aggregated progress percentages and headline daily objective.
+  - `GET /api/v1/tasks/{task_id}`: returns task detail with topic, objectives, and prerequisites.
+  - Task completion workflow in `task.py` repository supporting `confidence_score` and `actual_hours` updates.
+- **Navigation & Routing**:
+  - Registered `/today` route in `App.tsx` and added "Today" item with calendar icon to `Sidebar.tsx`.
+- **Tests**:
+  - Added 4 backend tests covering `/today/summary`, `/overdue`, task detail, and completion workflows with confidence/hours. Total 104 backend tests passing.
+
+---
+
 ## [0.13.0] — 2026-09-20
 
 ### Added — Session 6: Full Curriculum Seed (196 Days)

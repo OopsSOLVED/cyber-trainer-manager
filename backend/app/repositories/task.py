@@ -61,6 +61,33 @@ async def get_user_tasks_for_day(db: AsyncSession, user_id: int, date: datetime)
     return tasks
 
 
+async def get_overdue_tasks_for_user(db: AsyncSession, user_id: int, date: datetime) -> list[Task]:
+    """Fetch tasks for a user that are past their assigned date and not completed."""
+    target_date = date.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    result = await db.execute(
+        select(Task)
+        .where(
+            and_(
+                Task.user_id == user_id,
+                Task.assigned_date < target_date,
+                Task.status.notin_([TaskStatus.COMPLETED, TaskStatus.SKIPPED]),
+            )
+        )
+        .options(
+            selectinload(Task.topic),
+            selectinload(Task.subtasks).selectinload(Subtask.learning_objective),
+            selectinload(Task.dependencies).selectinload(TaskDependency.prerequisite_task),
+        )
+        .order_by(Task.assigned_date.asc())
+    )
+    tasks = list(result.scalars().all())
+    for t in tasks:
+        t.prerequisite_task_ids = [dep.prerequisite_task_id for dep in getattr(t, "dependencies", [])]
+    return tasks
+
+
+
 async def generate_tasks_for_day(db: AsyncSession, user_id: int, day_number: int, date: datetime) -> list[Task]:
     """
     Generate user tasks based on the curriculum day_number.

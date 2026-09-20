@@ -14,6 +14,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.database import get_db
 from app.api.deps import get_current_user
 from app.models.user import User
+from app.models.task import TaskStatus
 from app.schemas.task import (
     TaskResponse,
     TaskUpdate,
@@ -22,9 +23,11 @@ from app.schemas.task import (
     SubtaskUpdate,
     TaskDependencyCreate,
     TaskDependencyResponse,
+    TodaySummaryResponse,
 )
 from app.repositories.task import (
     get_user_tasks_for_day,
+    get_overdue_tasks_for_user,
     generate_tasks_for_day,
     get_task_by_id,
     update_task,
@@ -74,6 +77,82 @@ async def get_today_tasks(
     today = datetime.now(timezone.utc)
     tasks = await get_user_tasks_for_day(db, current_user.id, today)
     return tasks
+
+
+@router.get(
+    "/overdue",
+    response_model=list[TaskResponse],
+    summary="Get overdue tasks",
+    description="Returns all tasks assigned prior to today that have not been completed.",
+)
+async def get_overdue_tasks(
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """Fetch overdue tasks for the current user."""
+    today = datetime.now(timezone.utc)
+    return await get_overdue_tasks_for_user(db, current_user.id, today)
+
+
+@router.get(
+    "/summary/today",
+    response_model=TodaySummaryResponse,
+    summary="Get summary for today's tasks",
+    description="Returns aggregate progress metrics and today's primary learning objective.",
+)
+async def get_today_summary(
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """Calculate summary statistics and headline objective for today."""
+    today = datetime.now(timezone.utc)
+    today_tasks = await get_user_tasks_for_day(db, current_user.id, today)
+    overdue_tasks = await get_overdue_tasks_for_user(db, current_user.id, today)
+
+    total = len(today_tasks)
+    completed = sum(1 for t in today_tasks if t.status == TaskStatus.COMPLETED)
+    in_progress = sum(1 for t in today_tasks if t.status == TaskStatus.IN_PROGRESS)
+    est_hours = sum(t.estimated_hours for t in today_tasks)
+    act_hours = sum(t.actual_hours for t in today_tasks)
+    pct = round((completed / total) * 100, 1) if total > 0 else 0.0
+
+    daily_objective = None
+    if today_tasks:
+        first_task = today_tasks[0]
+        if hasattr(first_task, "topic") and first_task.topic:
+            daily_objective = f"{first_task.topic.name}: {first_task.topic.description}"
+
+    return TodaySummaryResponse(
+        total_tasks=total,
+        completed_tasks=completed,
+        in_progress_tasks=in_progress,
+        overdue_tasks=len(overdue_tasks),
+        estimated_hours=est_hours,
+        actual_hours=act_hours,
+        completion_percentage=pct,
+        daily_objective=daily_objective,
+    )
+
+
+@router.get(
+    "/{task_id}",
+    response_model=TaskResponse,
+    summary="Get task details",
+    description="Returns detailed task information, objectives, and prerequisites.",
+)
+async def get_task_detail_endpoint(
+    task_id: int,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """Fetch task detail by ID."""
+    task = await get_task_by_id(db, task_id)
+    if not task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    if task.user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to view this task")
+    return task
+
 
 
 @router.patch(

@@ -92,3 +92,17 @@ class TaskResponse(TaskBase):
 class TaskGenerationRequest(BaseModel):
     day_number: int = Field(ge=1, le=365, description="Day number in the 196-day plan")
 
+
+# ── Today Summary ────────────────────────────────────────────────
+
+class TodaySummaryResponse(BaseModel):
+    total_tasks: int
+    completed_tasks: int
+    in_progress_tasks: int
+    overdue_tasks: int
+    estimated_hours: float
+    actual_hours: float
+    completion_percentage: float
+    daily_objective: str | None = None
+
+

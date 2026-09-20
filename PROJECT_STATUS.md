@@ -2,9 +2,9 @@
 
 ## Specification Compliance & Session-Gated Progress
 **Architecture Plan**: 25 Planned Development Sessions (Section 32)  
-**Current Milestone**: Session 6 Complete — Ready for Session 7  
+**Current Milestone**: Session 7 Complete — Ready for Session 8  
 **Date**: 2026-09-20  
-**Test Suite**: 100 Passed (0 Failures)  
+**Test Suite**: 104 Passed (0 Failures)  
 **Frontend**: TypeScript 0 errors, Vite build successful  
 
 ---
@@ -19,9 +19,9 @@
 | **4** | **Curriculum data model** | ✅ Done | Phase, SkillLayer, Domain, Topic, LearningObjective hierarchy with eager relationships |
 | **5** | **Task engine & dependencies** | ✅ Done | Tasks, Subtasks, TaskPriority, TaskType, due dates, TaskDependency model & enforcement |
 | **6** | **Full curriculum seed** | ✅ Done | Complete 196-day roadmap across all 28 weeks, 4 phases, 10 skill layers, 588 objectives |
-| **7** | **Today view** | ⏳ **NEXT** | Actionable daily view, objective, evidence prompt, reflections, and completion controls |
+| **7** | **Today view** | ✅ Done | Actionable daily view, daily objective banner, overdue queue, reflection & task detail modal |
+| **8** | **Roadmap UI** | ⏳ **NEXT** | Full interactive roadmap navigation, phase/domain filters, progress indicators |
 
-| **8** | **Roadmap UI** | 📋 Backlog | Full interactive roadmap navigation, phase/domain filters, progress indicators |
 | **9** | **Study sessions** | 📋 Backlog | Timer engine (start/stop), session persistence, interruption tracking, actual study time |
 | **10** | **Competency engine** | 📋 Backlog | 6 competency levels (Unknown → Teaching-ready), progression rules, mastery tracking |
 | **11** | **Review engine** | 📋 Backlog | Spaced repetition, weak-area detection, confidence-based revision queue |
@@ -40,9 +40,32 @@
 | **24** | **Deployment** | 📋 Backlog | Production Docker & Cloud configuration, migrations runner, zero-downtime deploy |
 | **25** | **Final production readiness**| 📋 Backlog | Security audit, sync verification, disaster recovery drills, documentation signoff |
 
+## Completed in Session 7: Today View
+
+- **Frontend Today Execution Interface (`Today.tsx`)**:
+  - **Daily Objective Banner**: Displays Day number, headline learning objective, domain hierarchy, and day-switcher input.
+  - **Summary Metrics Bar**: Real-time progress bar, completion percentage, active vs completed counts, estimated vs logged study hours, and overdue counter.
+  - **Overdue Revision Queue**: Dedicated alert card highlighting prior unfinished tasks with one-click completion.
+  - **Actionable Task Cards**: Full status toggling (Todo, In Progress, Completed), type badges, priority indicators, estimated hours, and interactive subtask checkpoints.
+  - **Task Detail & Reflection Modal (Section 22 UX)**:
+    - Displays learning objective, action steps, deliverable/evidence criteria.
+    - Learner reflection textarea: *"What did I understand today that I could not explain yesterday?"*
+    - Interactive confidence score slider (0–100%) and actual hours logged input.
+    - Full synchronization with the backend via `PATCH /api/v1/tasks/{id}`.
+- **Backend API Additions**:
+  - `GET /api/v1/tasks/today`: returns today's tasks with full attributes and subtasks.
+  - `GET /api/v1/tasks/overdue`: returns uncompleted tasks assigned before today.
+  - `GET /api/v1/tasks/summary/today`: returns aggregated progress percentages and headline daily objective.
+  - `GET /api/v1/tasks/{task_id}`: returns task detail with topic, objectives, and prerequisites.
+- **Navigation & Routing**:
+  - Added `/today` route in `App.tsx` and linked "Today" in `Sidebar.tsx`.
+- **Automated Tests**:
+  - Added tests for `GET /tasks/overdue`, `GET /tasks/summary/today`, `GET /tasks/{id}`, and task completion workflow with confidence score and hours (104 backend tests total passing).
+
 ---
 
 ## Completed in Session 6: Full Curriculum Seed (196 Days)
+
 
 - **Complete 196-Day Master Curriculum**:
   - Authored full dataset across all 28 weeks, 4 Phases, and 10 Skill Layers matching Section 8 specifications.
@@ -130,9 +153,9 @@ npm run dev
 ---
 
 ## Next Session Objective
-**Session 7 — Today View**:
-- Build backend and frontend for today's actionable learning agenda.
-- Display daily learning objective, practical exercises, lab instructions, and evidence deliverables.
-- Add self-assessment reflections and confidence score capture.
-- Complete task controls with optimistic UI and live database synchronization.
+**Session 8 — Roadmap UI**:
+- Build dedicated full-roadmap exploration page with Phase, Skill Layer, and Domain hierarchy navigation.
+- Implement progress indicators, completed task counts, and visual mastery bars per domain.
+- Add filtering by difficulty, phase, and completion status.
+
 
